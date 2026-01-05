@@ -75,7 +75,7 @@ const Navbar = () => {
             {/* Active Pill (hidden on Contact) */}
             {showPill && (
               <span
-                className="absolute left-0 top-1/2 rounded-full border border-orange-500 shadow-sm transition-all duration-300 ease-out"
+                className="absolute left-0 top-1/2 rounded-full border border-blue-500 shadow-sm transition-all duration-300 ease-out"
                 style={pillStyle}
               />
             )}
