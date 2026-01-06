@@ -21,7 +21,7 @@ const Footer = () => {
 
           {/* Brand / About */}
           <div>
-            <img src={Logo} alt="Sathya Softech" className="h-10 mb-4" />
+            <img src={Logo} alt="Sathya Softech" className="h-12 mb-6 bg-white rounded-full p-1" />
 
             <p className="text-sm leading-relaxed text-gray-400">
               We craft visually refined websites and powerful applications.
@@ -82,12 +82,12 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-3">
                 <FaPhoneAlt className="text-orange-500" />
-                <span>+91 23456 7890</span>
+                <span>+91 91171-77979</span>
               </li>
 
               <li className="flex items-center gap-3">
                 <FaEnvelope className="text-orange-500" />
-                <span>sathyasoftech.in123@gmail.com</span>
+                <span>contact@sathyasoftechin.com</span>
               </li>
 
               <li className="flex items-center gap-3">
