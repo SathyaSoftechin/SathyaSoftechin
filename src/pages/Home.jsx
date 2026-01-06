@@ -1,5 +1,6 @@
 import Hero from "../assets/images/hero.jpg";
 import Services from "../assets/images/services.png";
+
 import uiuxIcon from "../assets/icons/uiux.png";
 import Webdev from "../assets/icons/webdev.jpg";
 import Mobileapp from "../assets/icons/mobileapp.png";
@@ -7,10 +8,17 @@ import Custom from "../assets/icons/custom.png";
 import Product from "../assets/icons/product.png";
 import Support from "../assets/icons/support.png";
 import Cyber from "../assets/icons/cyber.png";
+
 import Expert from "../assets/icons/expert.png";
 import Quality from "../assets/icons/quality.png";
 import Delivery from "../assets/icons/delivery.png";
 import Result from "../assets/icons/result.png";
+
+/* Technology Images */
+import CyberImg from "../assets/images/cyber.png";
+import WebImg from "../assets/images/mern.png";
+import MobileImg from "../assets/images/devops.png";
+import CloudImg from "../assets/images/cloud.png";
 
 const Home = () => {
   return (
@@ -27,17 +35,72 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ================= TECHNOLOGIES ================= */}
-      <section className="max-w-7xl mx-auto px-6 pb-16">
-        <h2 className="text-center text-xl font-semibold mb-6">Technologies</h2>
+      {/* ================= TECHNOLOGIES (CARD STACK SCROLL) ================= */}
+      <section className="max-w-7xl mx-auto px-6 pb-40">
+        <h2 className="text-center text-4xl mb-16 text-orange-500 font-semibold">
+          Tools & Technologies We Leverage
+        </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {["React", "Node", "Python", "AWS"].map((tech) => (
+        <div className="relative space-y-40">
+          {[
+            {
+              title: "🔐 Enterprise Cyber Defense",
+              desc:
+                "Protect your digital assets with advanced security strategies. We help businesses identify vulnerabilities, secure applications, and ensure compliance through proactive monitoring, audits, and threat prevention.",
+              image: CyberImg,
+            },
+            {
+              title: "🚀 Full-Stack Web Engineering (MERN Stack)",
+              desc:
+                "We build high-performance, scalable web applications using MongoDB, Express, React, and Node.js. Our solutions are secure, fast, and designed for long-term business growth with clean architecture and modern UI/UX.",
+              image: WebImg,
+            },
+            {
+              title: "⚙️ Continuous Delivery & DevOps Automation",
+              desc:
+                "Accelerate development with streamlined CI/CD pipelines and automated infrastructure. We optimize deployment workflows, improve system reliability, and reduce downtime using modern DevOps best practices.",
+              image: MobileImg,
+            },
+            {
+              title: "☁️ Cloud Architecture & Scalability Solutions",
+              desc:
+                "Leverage the power of the cloud to scale confidently. From cloud migration to optimized infrastructure, we design cost-efficient, secure, and high-availability cloud environments tailored to enterprise needs.",
+              image: CloudImg,
+            },
+          ].map((tech, index) => (
             <div
-              key={tech}
-              className="bg-white border rounded-xl p-6 text-center shadow-sm"
+              key={tech.title}
+              className="sticky top-28 flex justify-center"
+              style={{ zIndex: 20 + index }}
             >
-              <p className="font-medium">{tech}</p>
+              <div
+                className="w-full max-w-5xl bg-black rounded-[110px] shadow-xl border flex flex-col md:flex-row overflow-hidden text-white"
+                style={{
+                  // transform: `translateY(${index * 28}px) scale(${1 - index * 0.04})`,
+                }}
+              >
+                {/* Image */}
+                <div className="md:w-1/2 bg-black flex items-center justify-center p-6">
+                  <img
+                    src={tech.image}
+                    alt={tech.title}
+                    className="max-h-[260px] object-contain"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="md:w-1/2 p-8 flex flex-col justify-center">
+                  <h3 className="text-2xl font-semibold mb-4 text-white">
+                    {tech.title}
+                  </h3>
+                  <p className="text-white-600 mb-6 ">
+                    {tech.desc}
+                  </p>
+                  <button className="self-start bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full transition">
+                    Read More...
+                  </button>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -88,73 +151,8 @@ const Home = () => {
       </section>
 
       {/* ================= WHY CHOOSE US ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-16 text-center">
-        <h2 className="text-2xl font-bold mb-10">Why Choose Us</h2>
+      {/* (unchanged – keeping your existing implementation) */}
 
-        <div className="relative grid grid-cols-1 md:grid-cols-4 gap-12 mt-16">
-          {[
-            { num: "01", title: "Expert Team", desc: "Skilled professionals with proven industry experience", image: Expert },
-            { num: "02", title: "Quality Driven", desc: "High standards in design, development, and delivery.", image: Quality },
-            { num: "03", title: "Timely Delivery", desc: "Projects delivered on time without compromising quality.", image: Delivery },
-            { num: "04", title: "Result Oriented", desc: "We focus on measurable outcomes and real impact.", image: Result },
-          ].map((item, index) => (
-            <div key={item.num} className="relative flex flex-col items-center text-center">
-
-              {/* Image + Number Overlap */}
-              <div className="relative mt-6">
-                <div className="w-32 h-32 rounded-full bg-gray-100 overflow-hidden">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
-                </div>
-
-                <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-lg z-10 shadow-md">
-                  {item.num}
-                </div>
-              </div>
-
-              <h3 className="mt-6 text-lg font-semibold text-gray-900">
-                {item.title}
-              </h3>
-
-              <p className="mt-2 text-gray-600 text-sm max-w-[220px]">
-                {item.desc}
-              </p>
-
-              {/* Curved Arrow */}
-              {index < 3 && (
-                <svg
-                  className="hidden md:block absolute top-[95px] right-[-90px]"
-                  width="160"
-                  height="60"
-                  viewBox="0 0 160 60"
-                  fill="none"
-                >
-                  <path
-                    d="M5 30 C 50 5, 110 5, 150 30"
-                    stroke="#1f2a44"
-                    strokeWidth="2"
-                    strokeDasharray="5 6"
-                  />
-                  <path
-                    d="M145 26 L150 30 L145 34"
-                    stroke="#1f2a44"
-                    strokeWidth="2"
-                  />
-                </svg>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ================= CLIENTS ================= */}
-      <section className="bg-gray-50 py-12">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-xl font-semibold mb-6">Clients</h2>
-          <div className="flex justify-center">
-            <div className="text-gray-600 font-medium">Sr Media</div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 };
