@@ -1,5 +1,5 @@
-import Hero from "../assets/images/Hero.jpg";
-import Services from "../assets/images/Services.png";
+import Hero from "../assets/images/hero.jpg";
+import Services from "../assets/images/services.png";
 import uiuxIcon from "../assets/icons/uiux.png";
 import Webdev from "../assets/icons/webdev.jpg";
 import Mobileapp from "../assets/icons/mobileapp.png";
