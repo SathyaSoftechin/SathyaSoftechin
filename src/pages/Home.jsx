@@ -19,6 +19,7 @@ import CyberImg from "../assets/images/cyber.png";
 import WebImg from "../assets/images/mern.png";
 import MobileImg from "../assets/images/devops.png";
 import CloudImg from "../assets/images/cloud.png";
+import AiImg from "../assets/images/aiml.png";
 
 const Home = () => {
   return (
@@ -31,7 +32,11 @@ const Home = () => {
         </h1>
 
         <div className="mt-10 rounded-2xl overflow-hidden shadow-lg">
-          <img src={Hero} alt="Digital Innovation" className="w-full object-cover" />
+          <img
+            src={Hero}
+            alt="Digital Innovation"
+            className="w-full object-cover"
+          />
         </div>
       </section>
 
@@ -44,27 +49,28 @@ const Home = () => {
         <div className="relative space-y-40">
           {[
             {
-              title: "🔐 Enterprise Cyber Defense",
-              desc:
-                "Protect your digital assets with advanced security strategies. We help businesses identify vulnerabilities, secure applications, and ensure compliance through proactive monitoring, audits, and threat prevention.",
-              image: CyberImg,
+              title: "🤖 AI & Machine Learning Solutions",
+              desc: "We design intelligent systems that turn data into actionable insights. From predictive analytics to automation and personalized experiences, our AI/ML solutions help businesses improve efficiency, decision-making, and competitive advantage.",
+              image: AiImg,
             },
             {
               title: "🚀 Full-Stack Web Engineering (MERN Stack)",
-              desc:
-                "We build high-performance, scalable web applications using MongoDB, Express, React, and Node.js. Our solutions are secure, fast, and designed for long-term business growth with clean architecture and modern UI/UX.",
+              desc: "We build high-performance, scalable web applications using MongoDB, Express, React, and Node.js. Our solutions are secure, fast, and designed for long-term business growth with clean architecture and modern UI/UX.",
               image: WebImg,
             },
             {
               title: "⚙️ Continuous Delivery & DevOps Automation",
-              desc:
-                "Accelerate development with streamlined CI/CD pipelines and automated infrastructure. We optimize deployment workflows, improve system reliability, and reduce downtime using modern DevOps best practices.",
+              desc: "Accelerate development with streamlined CI/CD pipelines and automated infrastructure. We optimize deployment workflows, improve system reliability, and reduce downtime using modern DevOps best practices.",
               image: MobileImg,
             },
             {
+              title: "🔐 Enterprise Cyber Defense",
+              desc: "Protect your digital assets with advanced security strategies. We help businesses identify vulnerabilities, secure applications, and ensure compliance through proactive monitoring, audits, and threat prevention.",
+              image: CyberImg,
+            },
+            {
               title: "☁️ Cloud Architecture & Scalability Solutions",
-              desc:
-                "Leverage the power of the cloud to scale confidently. From cloud migration to optimized infrastructure, we design cost-efficient, secure, and high-availability cloud environments tailored to enterprise needs.",
+              desc: "Leverage the power of the cloud to scale confidently. From cloud migration to optimized infrastructure, we design cost-efficient, secure, and high-availability cloud environments tailored to enterprise needs.",
               image: CloudImg,
             },
           ].map((tech, index) => (
@@ -75,9 +81,11 @@ const Home = () => {
             >
               <div
                 className="w-full max-w-5xl bg-black rounded-[110px] shadow-xl border flex flex-col md:flex-row overflow-hidden text-white"
-                style={{
-                  // transform: `translateY(${index * 28}px) scale(${1 - index * 0.04})`,
-                }}
+                style={
+                  {
+                    // transform: `translateY(${index * 28}px) scale(${1 - index * 0.04})`,
+                  }
+                }
               >
                 {/* Image */}
                 <div className="md:w-1/2 bg-black flex items-center justify-center p-6">
@@ -93,9 +101,7 @@ const Home = () => {
                   <h3 className="text-2xl font-semibold mb-4 text-white">
                     {tech.title}
                   </h3>
-                  <p className="text-white-600 mb-6 ">
-                    {tech.desc}
-                  </p>
+                  <p className="text-white-600 mb-6 ">{tech.desc}</p>
                   <button className="self-start bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full transition">
                     Read More...
                   </button>
@@ -120,13 +126,41 @@ const Home = () => {
 
             <div className="space-y-6">
               {[
-                { title: "UI/UX Design", desc: "Crafting intuitive designs that enhance user experience and engagement.", image: uiuxIcon },
-                { title: "Web Development", desc: "High-performance, scalable web applications tailored to your business.", image: Webdev },
-                { title: "Mobile App Development", desc: "Robust Android & iOS apps with seamless performance.", image: Mobileapp },
-                { title: "Custom Software Development", desc: "Tailored software solutions aligned with your business goals.", image: Custom },
-                { title: "Product Development", desc: "From idea to launch with complete product lifecycle support.", image: Product },
-                { title: "Support & Maintenance", desc: "Continuous monitoring, updates, and performance optimization.", image: Support },
-                { title: "Cyber Security", desc: "Securing your digital assets with advanced protection strategies.", image: Cyber },
+                {
+                  title: "UI/UX Design",
+                  desc: "Crafting intuitive designs that enhance user experience and engagement.",
+                  image: uiuxIcon,
+                },
+                {
+                  title: "Web Development",
+                  desc: "High-performance, scalable web applications tailored to your business.",
+                  image: Webdev,
+                },
+                {
+                  title: "Mobile App Development",
+                  desc: "Robust Android & iOS apps with seamless performance.",
+                  image: Mobileapp,
+                },
+                {
+                  title: "Custom Software Development",
+                  desc: "Tailored software solutions aligned with your business goals.",
+                  image: Custom,
+                },
+                {
+                  title: "Product Development",
+                  desc: "From idea to launch with complete product lifecycle support.",
+                  image: Product,
+                },
+                {
+                  title: "Support & Maintenance",
+                  desc: "Continuous monitoring, updates, and performance optimization.",
+                  image: Support,
+                },
+                {
+                  title: "Cyber Security",
+                  desc: "Securing your digital assets with advanced protection strategies.",
+                  image: Cyber,
+                },
               ].map((service) => (
                 <div
                   key={service.title}
@@ -152,7 +186,6 @@ const Home = () => {
 
       {/* ================= WHY CHOOSE US ================= */}
       {/* (unchanged – keeping your existing implementation) */}
-
     </main>
   );
 };
