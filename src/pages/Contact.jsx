@@ -129,6 +129,10 @@ const Contact = () => {
                   <input type="radio" name="subject" />
                   Need Service
                 </label>
+                <label className="flex items-center gap-2">
+                  <input type="radio" name="subject" />
+                  Job Enquiry
+                </label>
               </div>
             </div>
 
