@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Yaritrip from "../assets/images/yaritrip-logo.png";
 import HloPG from "../assets/images/hlopg-logo.png";
+import bg from "../assets/images/bg-2.png";
 
 const Products = () => {
   return (
@@ -128,13 +129,26 @@ const Products = () => {
         </div>
       </section>
       {/* ================= FINAL CTA ================= */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+      <section className="relative py-28 overflow-hidden">
+        {/* Decorative Background Image */}
+        <div className="absolute inset-0 flex justify-center items-end pointer-events-none">
+          <img
+            src={bg}
+            alt=""
+            className="w-[1500px] max-w-none translate-y-24"
+          />
+        </div>
+
+        {/* Optional soft overlay for contrast */}
+        {/* <div className="absolute inset-0 bg-white/70"></div> */}
+
+        {/* CTA Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-zinc-200 mb-4">
             Interested in What We’re Building?
           </h2>
 
-          <p className="text-gray-600 max-w-2xl mx-auto mb-10">
+          <p className="text-white max-w-2xl mx-auto mb-10">
             We’re continuously building and improving products that solve
             real-world problems. Explore our platforms or get in touch to learn
             more.
@@ -152,7 +166,7 @@ const Products = () => {
             {/* Secondary CTA */}
             <a
               href="/about"
-              className="inline-flex items-center justify-center border border-gray-300 hover:border-orange-500 text-gray-800 hover:text-orange-500 px-8 py-3 rounded-full font-medium transition"
+              className="inline-flex items-center justify-center border border-gray-300 hover:border-orange-500 text-zinc-200 hover:text-orange-500 px-8 py-3 rounded-full font-medium transition"
             >
               Learn About Us
             </a>
