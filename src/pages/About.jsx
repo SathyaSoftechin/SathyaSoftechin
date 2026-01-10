@@ -16,8 +16,8 @@ const About = () => {
   return (
     <main className="w-full">
       {/* ================= HERO / INTRO ================= */}
-      <section className="bg-gray-100 pt-28">
-        <div className="max-w-7xl mx-auto px-4 py-12 text-center">
+      <section className="bg-gray-100 pt-16">
+        <div className="max-w-7xl mx-auto py-12 text-center">
           <h1 className="text-3xl md:text-5xl font-serifDisplay font-bold text-gray-900">
             About Sathya Softech-in
           </h1>
@@ -96,12 +96,25 @@ const About = () => {
 
       {/* ================= WHAT WE DO (WITH IMAGES) ================= */}
       {/* ================= WHAT WE DO ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-14">
+      <section className="relative max-w-7xl mx-auto px-6 py-24 overflow-hidden">
+        {/* Decorative Background Image */}
+        <div
+          className="absolute -left-40 top-1/2 -translate-y-1/2 
+               w-[700px] h-[700px] 
+               bg-no-repeat bg-contain opacity-40 
+               pointer-events-none"
+          style={{
+            // backgroundImage: "url('/src/assets/images/bg-1.png')",
+          }}
+        />
+
+        {/* Section Heading */}
+        <h2 className="relative z-10 text-2xl md:text-3xl font-bold text-center mb-14">
           What We Do
         </h2>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+        {/* Cards */}
+        <div className="relative z-10 grid sm:grid-cols-2 md:grid-cols-3 gap-10">
           {[
             {
               title: "UI/UX Design",
@@ -136,9 +149,11 @@ const About = () => {
           ].map((item) => (
             <div
               key={item.title}
-              className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex gap-6 items-start"
+              className="group bg-white rounded-2xl p-8 shadow-sm 
+                   hover:shadow-lg hover:-translate-y-1 
+                   transition-all duration-300 flex gap-6 items-start"
             >
-              {/* Image (NO background) */}
+              {/* Image (no background) */}
               <div className="flex-shrink-0">
                 <img
                   src={item.image}
