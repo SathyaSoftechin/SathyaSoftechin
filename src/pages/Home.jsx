@@ -20,12 +20,25 @@ import WebImg from "../assets/images/mern.png";
 import MobileImg from "../assets/images/devops.png";
 import CloudImg from "../assets/images/cloud.png";
 import AiImg from "../assets/images/aiml.png";
+import HeroVideo from "../assets/videos/herovideo.mp4";
 
 const Home = () => {
   return (
     <main className="w-full">
+      
       {/* ================= HERO SECTION ================= */}
       <section className="max-w-7xl mx-auto px-6 pt-10 pb-16 text-center">
+        <div className="relative w-full h-screen overflow-hidden">
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src={HeroVideo} type="video/mp4" />
+        </video>
+      </div>
         <h1 className="text-2xl md:text-5xl font-serifDisplay font-bold text-gray-900 leading-tight">
           Transforming Businesses Through <br />
           <span className="text-orange-500">Digital Innovation</span>

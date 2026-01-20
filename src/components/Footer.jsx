@@ -30,13 +30,13 @@ const Footer = () => {
             </p>
 
             {/* Optional Image */}
-            <div className="mt-6 rounded-lg overflow-hidden">
+            {/* <div className="mt-6 rounded-lg overflow-hidden">
               <img
                 src={FooterImage}
                 alt="Workspace"
                 className="w-full object-cover"
               />
-            </div>
+            </div> */}
           </div>
 
           {/* Pages */}

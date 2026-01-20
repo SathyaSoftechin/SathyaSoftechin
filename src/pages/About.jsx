@@ -9,6 +9,7 @@ import mobileIcon from "../assets/icons/mobileapp.png";
 import customIcon from "../assets/icons/custom.png";
 import cyberIcon from "../assets/icons/cyber.png";
 import supportIcon from "../assets/icons/support.png";
+import bg from "../assets/images/bg-3.png";
 
 const About = () => {
   const IMAGE_SIZE = 80; // 🔥 change this to 64, 72, 80 anytime
@@ -103,9 +104,11 @@ const About = () => {
                w-[700px] h-[700px] 
                bg-no-repeat bg-contain opacity-40 
                pointer-events-none"
-          style={{
-            // backgroundImage: "url('/src/assets/images/bg-1.png')",
-          }}
+          style={
+            {
+              // backgroundImage: "url('/src/assets/images/bg-1.png')",
+            }
+          }
         />
 
         {/* Section Heading */}
@@ -223,12 +226,19 @@ const About = () => {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      <section className="relative py-28 overflow-hidden">
+        <div className="absolute inset-0 flex justify-center items-end pointer-events-none">
+          <img
+            src={bg}
+            alt=""
+            className="w-[1500px] max-w-none translate-y-20"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-6 text-center text-slate-50 relative z-10">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
             Let’s Build Something Impactful
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+          <p className="text-gray-50 max-w-2xl mx-auto mb-8">
             Whether you’re launching a new product or scaling an existing one,
             Sathya Softech is ready to help you succeed.
           </p>

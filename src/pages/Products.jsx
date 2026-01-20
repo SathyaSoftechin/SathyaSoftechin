@@ -27,7 +27,7 @@ const Products = () => {
         <div className="grid md:grid-cols-2 gap-10">
           {/* ================= PRODUCT 1 ================= */}
           <Link
-            to="/products/hlopg"
+            to="/hlopg"
             className="group bg-blue-100 rounded-3xl p-10 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border"
           >
             <div className="flex flex-col items-center text-center">
@@ -143,7 +143,7 @@ const Products = () => {
         {/* <div className="absolute inset-0 bg-white/70"></div> */}
 
         {/* CTA Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-zinc-200 mb-4">
             Interested in What We’re Building?
           </h2>
