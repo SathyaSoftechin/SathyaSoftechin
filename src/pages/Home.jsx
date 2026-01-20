@@ -9,41 +9,55 @@ import Product from "../assets/icons/product.png";
 import Support from "../assets/icons/support.png";
 import Cyber from "../assets/icons/cyber.png";
 
-import Expert from "../assets/icons/expert.png";
-import Quality from "../assets/icons/quality.png";
-import Delivery from "../assets/icons/delivery.png";
-import Result from "../assets/icons/result.png";
-
 /* Technology Images */
 import CyberImg from "../assets/images/cyber.png";
 import WebImg from "../assets/images/mern.png";
 import MobileImg from "../assets/images/devops.png";
 import CloudImg from "../assets/images/cloud.png";
 import AiImg from "../assets/images/aiml.png";
-import HeroVideo from "../assets/videos/herovideo.mp4";
+
+/* Videos */
+import DesktopHeroVideo from "../assets/videos/herovideo.mp4";
+import MobileHeroVideo from "../assets/videos/mobilevideo.mp4";
 
 const Home = () => {
   return (
     <main className="w-full">
-      
       {/* ================= HERO SECTION ================= */}
-      <section className="max-w-7xl mx-auto px-6 pt-10 pb-16 text-center">
-        <div className="relative w-full h-screen overflow-hidden">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src={HeroVideo} type="video/mp4" />
-        </video>
-      </div>
-        <h1 className="text-2xl md:text-5xl font-serifDisplay font-bold text-gray-900 leading-tight">
+      <section className="max-w-7xl mx-auto px-6 pt-10 pb-10 text-center">
+        
+        {/* ================= HERO VIDEO ================= */}
+        <div className="relative w-full overflow-hidden mb-4">
+          {/* Desktop Video */}
+          <video
+            className="hidden md:block w-full h-[85vh] object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src={DesktopHeroVideo} type="video/mp4" />
+          </video>
+
+          {/* Mobile Video */}
+          <video
+            className="block md:hidden w-full h-[65vh] object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src={MobileHeroVideo} type="video/mp4" />
+          </video>
+        </div>
+
+        {/* ================= HERO TEXT ================= */}
+        <h1 className="mt-4 text-2xl md:text-5xl font-serifDisplay font-bold text-gray-900 leading-tight">
           Transforming Businesses Through <br />
           <span className="text-orange-500">Digital Innovation</span>
         </h1>
 
+        {/* ================= HERO IMAGE ================= */}
         <div className="mt-10 rounded-2xl overflow-hidden shadow-lg">
           <img
             src={Hero}
@@ -63,27 +77,32 @@ const Home = () => {
           {[
             {
               title: "🤖 AI & Machine Learning Solutions",
-              desc: "We design intelligent systems that turn data into actionable insights. From predictive analytics to automation and personalized experiences, our AI/ML solutions help businesses improve efficiency, decision-making, and competitive advantage.",
+              desc:
+                "We design intelligent systems that turn data into actionable insights, enabling automation, prediction, and smarter decisions.",
               image: AiImg,
             },
             {
               title: "🚀 Full-Stack Web Engineering (MERN Stack)",
-              desc: "We build high-performance, scalable web applications using MongoDB, Express, React, and Node.js. Our solutions are secure, fast, and designed for long-term business growth with clean architecture and modern UI/UX.",
+              desc:
+                "Scalable, secure web applications using MongoDB, Express, React, and Node.js with clean architecture.",
               image: WebImg,
             },
             {
               title: "⚙️ Continuous Delivery & DevOps Automation",
-              desc: "Accelerate development with streamlined CI/CD pipelines and automated infrastructure. We optimize deployment workflows, improve system reliability, and reduce downtime using modern DevOps best practices.",
+              desc:
+                "Optimized CI/CD pipelines, automation, and infrastructure reliability using modern DevOps practices.",
               image: MobileImg,
             },
             {
               title: "🔐 Enterprise Cyber Defense",
-              desc: "Protect your digital assets with advanced security strategies. We help businesses identify vulnerabilities, secure applications, and ensure compliance through proactive monitoring, audits, and threat prevention.",
+              desc:
+                "Proactive security strategies to safeguard applications, data, and infrastructure.",
               image: CyberImg,
             },
             {
               title: "☁️ Cloud Architecture & Scalability Solutions",
-              desc: "Leverage the power of the cloud to scale confidently. From cloud migration to optimized infrastructure, we design cost-efficient, secure, and high-availability cloud environments tailored to enterprise needs.",
+              desc:
+                "Secure, scalable, and cost-efficient cloud environments tailored for enterprise growth.",
               image: CloudImg,
             },
           ].map((tech, index) => (
@@ -92,16 +111,10 @@ const Home = () => {
               className="sticky top-28 flex justify-center"
               style={{ zIndex: 20 + index }}
             >
-              <div
-                className="w-full max-w-5xl bg-black rounded-[110px] shadow-xl border flex flex-col md:flex-row overflow-hidden text-white"
-                style={
-                  {
-                    // transform: `translateY(${index * 28}px) scale(${1 - index * 0.04})`,
-                  }
-                }
-              >
+              <div className="w-full max-w-5xl bg-black rounded-[110px] shadow-xl border flex flex-col md:flex-row overflow-hidden text-white">
+                
                 {/* Image */}
-                <div className="md:w-1/2 bg-black flex items-center justify-center p-6">
+                <div className="md:w-1/2 flex items-center justify-center p-6">
                   <img
                     src={tech.image}
                     alt={tech.title}
@@ -111,10 +124,10 @@ const Home = () => {
 
                 {/* Content */}
                 <div className="md:w-1/2 p-8 flex flex-col justify-center">
-                  <h3 className="text-2xl font-semibold mb-4 text-white">
+                  <h3 className="text-2xl font-semibold mb-4">
                     {tech.title}
                   </h3>
-                  <p className="text-white-600 mb-6 ">{tech.desc}</p>
+                  <p className="text-gray-300 mb-6">{tech.desc}</p>
                   <button className="self-start bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full transition">
                     Read More...
                   </button>
@@ -139,41 +152,13 @@ const Home = () => {
 
             <div className="space-y-6">
               {[
-                {
-                  title: "UI/UX Design",
-                  desc: "Crafting intuitive designs that enhance user experience and engagement.",
-                  image: uiuxIcon,
-                },
-                {
-                  title: "Web Development",
-                  desc: "High-performance, scalable web applications tailored to your business.",
-                  image: Webdev,
-                },
-                {
-                  title: "Mobile App Development",
-                  desc: "Robust Android & iOS apps with seamless performance.",
-                  image: Mobileapp,
-                },
-                {
-                  title: "Custom Software Development",
-                  desc: "Tailored software solutions aligned with your business goals.",
-                  image: Custom,
-                },
-                {
-                  title: "Product Development",
-                  desc: "From idea to launch with complete product lifecycle support.",
-                  image: Product,
-                },
-                {
-                  title: "Support & Maintenance",
-                  desc: "Continuous monitoring, updates, and performance optimization.",
-                  image: Support,
-                },
-                {
-                  title: "Cyber Security",
-                  desc: "Securing your digital assets with advanced protection strategies.",
-                  image: Cyber,
-                },
+                { title: "UI/UX Design", desc: "Crafting intuitive designs that enhance user experience.", image: uiuxIcon },
+                { title: "Web Development", desc: "High-performance, scalable web applications.", image: Webdev },
+                { title: "Mobile App Development", desc: "Robust Android & iOS applications.", image: Mobileapp },
+                { title: "Custom Software Development", desc: "Tailored solutions aligned with business goals.", image: Custom },
+                { title: "Product Development", desc: "From idea to launch with full lifecycle support.", image: Product },
+                { title: "Support & Maintenance", desc: "Continuous monitoring and optimization.", image: Support },
+                { title: "Cyber Security", desc: "Advanced protection strategies.", image: Cyber },
               ].map((service) => (
                 <div
                   key={service.title}
@@ -198,7 +183,8 @@ const Home = () => {
       </section>
 
       {/* ================= WHY CHOOSE US ================= */}
-      {/* (unchanged – keeping your existing implementation) */}
+      {/* (unchanged as requested) */}
+
     </main>
   );
 };
