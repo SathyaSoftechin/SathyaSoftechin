@@ -4,7 +4,7 @@ import srmedia from "../assets/images/srmedia.png";
 import gk from "../assets/images/gk.png";
 
 import uiuxIcon from "../assets/icons/uiux.png";
-import Webdev from "../assets/icons/webdev.jpg";
+import Webdev from "../assets/icons/webdev.png";
 import Mobileapp from "../assets/icons/mobileapp.png";
 import Custom from "../assets/icons/custom.png";
 import Product from "../assets/icons/product.png";
@@ -136,105 +136,124 @@ const Home = () => {
       </section>
 
       {/* ================= SERVICES ================= */}
-      <section className="bg-gray-50 py-16">
+      {/* ================= OUR SERVICES ================= */}
+      <section className="bg-gray-50 py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-orange-500 text-[30px] font-semibold px-20">
-            Our Services:
-          </div>
+          {/* Section Title */}
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900">
+            Our Services
+          </h2>
 
-          <div className="grid md:grid-cols-2 gap-10 items-start mt-6">
-            <div>
-              <img src={Services} alt="Services" />
-            </div>
-
-            <div className="space-y-6">
-              {[
-                {
-                  title: "UI/UX Design",
-                  desc: "Crafting intuitive designs.",
-                  image: uiuxIcon,
-                },
-                {
-                  title: "Cyber Security",
-                  desc: "Advanced protection strategies.",
-                  image: Cyber,
-                },
-                {
-                  title: "Web Development",
-                  desc: "Scalable web applications.",
-                  image: Webdev,
-                },
-                {
-                  title: "Mobile App Development",
-                  desc: "Android & iOS apps.",
-                  image: Mobileapp,
-                },
-                {
-                  title: "Cloud Architecture",
-                  desc: "Enterprise cloud solutions.",
-                  image: CloudImg,
-                },
-                {
-                  title: "Custom Software",
-                  desc: "Tailored business solutions.",
-                  image: Custom,
-                },
-                {
-                  title: "Product Development",
-                  desc: "End-to-end product lifecycle.",
-                  image: Product,
-                },
-                {
-                  title: "Support & Maintenance",
-                  desc: "Continuous optimization.",
-                  image: Support,
-                },
-              ].map((service) => (
-                <div
-                  key={service.title}
-                  className="bg-white p-5 rounded-xl shadow-sm flex gap-5 items-start"
-                >
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+            {[
+              {
+                title: "UI/UX Design",
+                desc: "We design user-centric interfaces focused on usability, accessibility, and conversion-driven experiences across platforms.",
+                image: uiuxIcon,
+              },
+              {
+                title: "Web Development",
+                desc: "High-performance, scalable, and secure web applications built using modern frameworks and best practices.",
+                image: Webdev,
+              },
+              {
+                title: "Mobile App Development",
+                desc: "Robust Android and iOS applications with smooth performance, scalability, and intuitive UX.",
+                image: Mobileapp,
+              },
+              {
+                title: "Cyber Security",
+                desc: "Advanced security solutions including audits, vulnerability testing, and proactive threat protection.",
+                image: Cyber,
+              },
+              {
+                title: "Cloud Architecture",
+                desc: "Designing scalable, cost-efficient, and secure cloud infrastructures tailored for business growth.",
+                image: CloudImg,
+              },
+              {
+                title: "Custom Software",
+                desc: "Tailor-made software solutions aligned precisely with your operational and business requirements.",
+                image: Custom,
+              },
+              {
+                title: "Product Development",
+                desc: "End-to-end product development from ideation to launch and post-release optimization.",
+                image: Product,
+              },
+              {
+                title: "Support & Maintenance",
+                desc: "Continuous monitoring, updates, and performance optimization to ensure long-term reliability.",
+                image: Support,
+              },
+            ].map((service) => (
+              <div
+                key={service.title}
+                className="group bg-black rounded-2xl p-6 
+                     shadow-sm hover:shadow-2xl 
+                     transition-all duration-300 
+                     overflow-hidden cursor-pointer"
+              >
+                {/* Image */}
+                <div className="flex justify-center mb-6">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-16 h-16 md:w-20 md:h-20 object-contain"
+                    className="h-28 object-contain transition-transform duration-300 
+                         group-hover:scale-105"
                   />
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm">{service.desc}</p>
-                  </div>
                 </div>
-              ))}
-            </div>
+
+                {/* Title */}
+                <h3 className="text-lg text-orange-300 text-center mb-2">
+                  {service.title}
+                </h3>
+
+                {/* Description (Hidden → Visible on Hover) */}
+                <div
+                  className="max-h-0 opacity-0 
+                       group-hover:max-h-40 
+                       group-hover:opacity-100 
+                       transition-all duration-300 ease-in-out"
+                >
+                  <p className="text-sm text-white text-center mt-4 leading-relaxed">
+                    {service.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ================= OUR CLIENTS ================= */}
-      <section className="bg-gray-200">
+      <section className="bg-gray-200 py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-blue-400 text-[40px] font-semibold text-center mb-14">
-            Our Clients
-          </h2>
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* LEFT CONTENT */}
+            <div className="ml-20">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                Trusted by our <br /> customers & partners
+              </h2>
 
-          {/* Center the entire grid */}
-          <div className="flex justify-center">
-            <div
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 
-                      gap-12 place-items-center"
-            >
+              <p className="text-gray-600 max-w-md">
+                We collaborate with businesses and partners who trust us to
+                build scalable, secure, and high-impact digital solutions.
+              </p>
+            </div>
+
+            {/* RIGHT LOGOS GRID */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 items-center ml-18">
               {clients.map((client) => (
                 <div
                   key={client.name}
-                  className="flex items-center justify-center w-full h-full"
+                  className="flex items-center justify-center h-20"
                 >
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="h-[150px] max-w-[auto] 
-                         object-contain ml-[730px]"
+                    className="h-[300px] object-contain"
                   />
                 </div>
               ))}

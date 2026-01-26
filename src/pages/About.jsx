@@ -4,7 +4,7 @@ import Mission from "../assets/images/mission.png";
 import VisionImg from "../assets/images/vision.png";
 
 import uiuxIcon from "../assets/icons/uiux.png";
-import webIcon from "../assets/icons/webdev.jpg";
+import webIcon from "../assets/icons/webdev.png";
 import mobileIcon from "../assets/icons/mobileapp.png";
 import customIcon from "../assets/icons/custom.png";
 import cyberIcon from "../assets/icons/cyber.png";
