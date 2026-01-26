@@ -78,7 +78,12 @@ const Footer = () => {
               {[
                 "UI/UX Design",
                 "Web Development",
-                "Mobile App Development",
+                "Android Development",
+                "iOS Development",
+                "Custom Software Development",
+                "Product Development",
+                "IT Support & Maintenance",
+                "Cybersecurity Solutions",
               ].map((service) => (
                 <li
                   key={service}
