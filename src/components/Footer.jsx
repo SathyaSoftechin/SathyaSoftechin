@@ -27,7 +27,7 @@ const Footer = () => {
       <div className="absolute inset-0 bg-black/70"></div>
 
       {/* Content Wrapper */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 ">
         {/* ================= TOP GRID ================= */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand / About */}
@@ -163,6 +163,14 @@ const Footer = () => {
             </a>
           </div>
         </div>
+        <Link to="/terms">
+          <div className="text-center py-6 flex flex-col md:flex-row items-center justify-between">
+          <p className="text-sm text-gray-400 text-center">
+            Terms and Conditions
+          </p>
+        </div>
+        </Link>
+        
       </div>
     </footer>
   );

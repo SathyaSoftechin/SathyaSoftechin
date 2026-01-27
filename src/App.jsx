@@ -12,6 +12,7 @@ import Mission from "./pages/Mission";
 import Vision from "./pages/Vision";
 import HloPG from "./pages/hlopg";
 import Yaritrip from "./pages/yaritrip";
+import Terms from "./pages/terms";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/vision" element={<Vision />} />
         <Route path="/hlopg" element={<HloPG />} />
         <Route path="/yaritrip" element={<Yaritrip />} />
+        <Route path="/terms" element={<Terms />} />
       </Routes>
       <Footer />
     </BrowserRouter>
