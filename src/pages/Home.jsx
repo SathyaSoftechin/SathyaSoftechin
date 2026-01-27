@@ -148,11 +148,6 @@ const Home = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
             {[
               {
-                title: "UI/UX Design",
-                desc: "We design user-centric interfaces focused on usability, accessibility, and conversion-driven experiences across platforms.",
-                image: uiuxIcon,
-              },
-              {
                 title: "Web Development",
                 desc: "High-performance, scalable, and secure web applications built using modern frameworks and best practices.",
                 image: Webdev,
@@ -171,6 +166,11 @@ const Home = () => {
                 title: "Cloud Architecture",
                 desc: "Designing scalable, cost-efficient, and secure cloud infrastructures tailored for business growth.",
                 image: CloudImg,
+              },
+              {
+                title: "UI/UX Design",
+                desc: "We design user-centric interfaces focused on usability, accessibility, and conversion-driven experiences across platforms.",
+                image: uiuxIcon,
               },
               {
                 title: "Custom Software",

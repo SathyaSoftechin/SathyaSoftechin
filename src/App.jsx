@@ -8,6 +8,10 @@ import Portfolio from "./pages/Portfolio";
 import Career from "./pages/Career";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import Mission from "./pages/Mission";
+import Vision from "./pages/Vision";
+import HloPG from "./pages/hlopg";
+import Yaritrip from "./pages/yaritrip";
 
 function App() {
   return (
@@ -20,6 +24,10 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/mission" element={<Mission />} />
+        <Route path="/vision" element={<Vision />} />
+        <Route path="/hlopg" element={<HloPG />} />
+        <Route path="/yaritrip" element={<Yaritrip />} />
       </Routes>
       <Footer />
     </BrowserRouter>

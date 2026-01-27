@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Yaritrip from "../assets/images/yaritrip-logo.png";
 import HloPG from "../assets/images/hlopg-logo.png";
 import bg from "../assets/images/bg-2.png";
+import yellaa from "../assets/images/yellaa.png";
 
 const Products = () => {
   return (
@@ -54,7 +55,7 @@ const Products = () => {
 
           {/* ================= PRODUCT 2 ================= */}
           <Link
-            to="/products/yaritrip"
+            to="/yaritrip"
             className="group bg-sky-100 rounded-3xl p-10 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border"
           >
             <div className="flex flex-col items-center text-center ">
@@ -75,6 +76,29 @@ const Products = () => {
 
             {/* CTA */}
             <span className="inline-flex items-center justify-center text-orange-500 font-medium">
+              View Product →
+            </span>
+          </Link>
+
+          <Link
+            to="/hlopg"
+            className="group bg-blue-400 rounded-3xl p-10 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border"
+          >
+            <div className="flex flex-col items-center text-center">
+              {/* Logo */}
+              <img
+                src={yellaa}
+                alt="yellaa Logo"
+                className="w-[200px] h-auto object-contain"
+              />
+            </div>
+
+            {/* Description */}
+            <p className="text-gray-900 leading-relaxed">
+              Yellaa is an emerging mobility platform designed to redefine urban transportation with technology, convenience, and sustainability at its core. Yellaa aims to lead the future of smart mobility by delivering safe, seamless, and efficient journeys for every user.
+            </p>
+
+            <span className="inline-flex items-center text-orange-500 font-medium mt-2">
               View Product →
             </span>
           </Link>

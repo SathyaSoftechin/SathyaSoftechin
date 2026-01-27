@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AboutImage from "../assets/images/services.png";
 import Who from "../assets/images/who.png";
 import Mission from "../assets/images/mission.png";
@@ -57,6 +58,7 @@ const About = () => {
       </section>
 
       {/* ================= MISSION & VISION ================= */}
+
       <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
           {[
@@ -64,31 +66,49 @@ const About = () => {
               title: "Our Mission",
               desc: "To empower businesses with innovative, secure, and scalable digital solutions that solve real-world problems.",
               image: Mission,
+              link: "/mission",
             },
             {
               title: "Our Vision",
               desc: "To become a trusted technology partner by delivering reliable products, exceptional UX, and long-term value.",
               image: VisionImg,
+              link: "/vision",
             },
           ].map((item) => (
             <div
               key={item.title}
-              className="group bg-orange-50 rounded-3xl p-10 shadow-sm hover:shadow-md transition-all duration-300 flex gap-6 items-start"
+              className="group bg-orange-50 rounded-3xl p-10 shadow-sm 
+                   hover:shadow-lg transition-all duration-300 
+                   flex gap-6 items-start"
             >
+              {/* Icon / Image */}
               <div className="flex-shrink-0 w-20 h-20 rounded-xl flex items-center justify-center">
                 <img
                   src={item.image}
                   alt={item.title}
-                  style={{ width: IMAGE_SIZE, height: IMAGE_SIZE }}
                   className="object-contain"
                 />
               </div>
 
-              <div>
+              {/* Content */}
+              <div className="flex flex-col">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+
+                <p className="text-gray-600 leading-relaxed mb-5">
+                  {item.desc}
+                </p>
+
+                {/* Read More Button */}
+                <Link
+                  to={item.link}
+                  className="inline-flex items-center w-fit 
+                       text-orange-500 font-medium 
+                       hover:text-orange-600 transition"
+                >
+                  Read More →
+                </Link>
               </div>
             </div>
           ))}
