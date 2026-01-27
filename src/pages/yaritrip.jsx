@@ -35,7 +35,7 @@ const Yaritrip = () => {
             </span>
 
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
-              What is Yaritrip?
+              What is <span className="text-sky-600">Yaritrip</span>
             </h2>
 
             <p className="text-gray-600 leading-relaxed mb-4">
