@@ -14,6 +14,8 @@ import Vision from "./pages/Vision";
 import HloPG from "./pages/hlopg";
 import Yaritrip from "./pages/yaritrip";
 import Terms from "./pages/terms";
+import Cookie from "./pages/Cookiepolicy";
+import Privacy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
         <Route path="/hlopg" element={<HloPG />} />
         <Route path="/yaritrip" element={<Yaritrip />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/cookies" element={<Cookie />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
       <Footer />
     </BrowserRouter>
