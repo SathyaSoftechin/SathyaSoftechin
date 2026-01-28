@@ -14,7 +14,7 @@ import Vision from "./pages/Vision";
 import HloPG from "./pages/hlopg";
 import Yaritrip from "./pages/yaritrip";
 import Terms from "./pages/terms";
-import Cookie from "./pages/Cookiepolicy";
+import Cookie from "./pages/CookiePolicy";
 import Privacy from "./pages/PrivacyPolicy";
 
 function App() {
