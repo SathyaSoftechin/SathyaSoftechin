@@ -15,7 +15,7 @@ import FooterImage from "../assets/images/footerimage.png";
 const Footer = () => {
   return (
     <footer
-      className="relative text-gray-300 pt-16"
+      className="relative text-gray-300 pt-20"
       style={{
         backgroundImage: `url(${FooterImage})`,
         backgroundSize: "cover",
@@ -24,13 +24,13 @@ const Footer = () => {
       }}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/70"></div>
+      <div className="absolute inset-0 bg-black/75"></div>
 
       {/* Content Wrapper */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 ">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* ================= TOP GRID ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          {/* Brand / About */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-14">
+          {/* BRAND */}
           <div>
             <img
               src={Logo}
@@ -38,43 +38,50 @@ const Footer = () => {
               className="h-12 mb-6 bg-white rounded-full p-1"
             />
 
-            <p className="text-sm leading-relaxed text-gray-300">
-              We craft visually refined websites and powerful applications.
-              Combining thoughtful design with robust development to deliver
-              digital products that create real impact.
+            <p className="text-sm leading-relaxed text-gray-300 mb-6">
+              Transforming businesses through innovative technology solutions.
+              We build secure, scalable, and high-impact digital products.
             </p>
+
+            {/* Social Icons */}
+            <div className="flex gap-4">
+              <a
+                href="https://www.facebook.com/profile.php?id=61586973818035"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaFacebookF className="w-9 h-9 p-2 rounded-md bg-white/10 hover:bg-orange-500 transition" />
+              </a>
+              <a
+                href="https://x.com/sathyasoftechin"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaTwitter className="w-9 h-9 p-2 rounded-md bg-white/10 hover:bg-orange-500 transition" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/sathyasoftech-in/posts/?feedView=all"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaLinkedinIn className="w-9 h-9 p-2 rounded-md bg-white/10 hover:bg-orange-500 transition" />
+              </a>
+              <a
+                href="https://www.instagram.com/sathya.softechin/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaInstagram className="w-9 h-9 p-2 rounded-md bg-white/10 hover:bg-orange-500 transition" />
+              </a>
+            </div>
           </div>
 
-          {/* Pages */}
+          {/* SERVICES */}
           <div>
-            <h4 className="text-white font-semibold mb-4 underline underline-offset-8 decoration-orange-500">
-              Pages
+            <h4 className="text-white font-semibold mb-6 underline underline-offset-8 decoration-orange-500">
+              Services
             </h4>
-
-            <ul className="space-y-2 text-sm">
-              {[
-                { label: "Home", path: "/" },
-                { label: "Products", path: "/products" },
-                { label: "Portfolio", path: "/portfolio" },
-                { label: "About Us", path: "/about" },
-                { label: "Career", path: "/career" },
-              ].map((page) => (
-                <li key={page.label}>
-                  <Link
-                    to={page.path}
-                    className="hover:text-orange-500 transition"
-                  >
-                    {page.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-white font-semibold mb-4 underline underline-offset-8 decoration-orange-500">Services</h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-3 text-sm">
               {[
                 "UI/UX Design",
                 "Web Development",
@@ -85,92 +92,87 @@ const Footer = () => {
                 "IT Support & Maintenance",
                 "Cybersecurity Solutions",
               ].map((service) => (
-                <li
-                  key={service}
-                  className="hover:text-orange-500 cursor-pointer transition"
-                >
+                <li key={service} className="hover:text-orange-500 transition">
                   {service}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* COMPANY */}
           <div>
-            <h4 className="text-white font-semibold mb-4 underline underline-offset-8 decoration-orange-500">Contact</h4>
-
+            <h4 className="text-white font-semibold mb-6 underline underline-offset-8 decoration-orange-500">
+              Company
+            </h4>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-center gap-3">
-                <FaPhoneAlt className="text-orange-500" />
-                <span>+91 91171-77979</span>
+              {[
+                { label: "Home", path: "/" },
+                { label: "About Us", path: "/about" },
+                { label: "Portfolio", path: "/portfolio" },
+                { label: "Career", path: "/career" },
+                { label: "Contact", path: "/contact" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link
+                    to={item.path}
+                    className="hover:text-orange-500 transition"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* CONTACT */}
+          <div>
+            <h4 className="text-white font-semibold mb-6 underline underline-offset-8 decoration-orange-500">
+              Contact Info
+            </h4>
+
+            <ul className="space-y-4 text-sm">
+              <li className="flex gap-3">
+                <FaEnvelope className="text-orange-500 mt-1" />
+                contact@sathyasoftechin.com
               </li>
 
-              <li className="flex items-center gap-3">
-                <FaEnvelope className="text-orange-500" />
-                <span>contact@sathyasoftechin.com</span>
+              <li className="flex gap-3">
+                <FaPhoneAlt className="text-orange-500 mt-1" />
+                +91 91171-77979
               </li>
 
               <li className="flex items-start gap-3">
                 <FaMapMarkerAlt className="text-orange-500 mt-1 flex-shrink-0" />
-                <span className="leading-relaxed">
-                  Sathya Softech-in, S Chandra Reddy Towers, Hitech City Road
-                  Divert, Ayyappa Society, VIP Hills, Jaihind Enclave, Madhapur,
-                  Hyderabad, Telangana 500081
+                <span className="leading-relaxed text-gray-300">
+                  Sathya Softech-in, First Floor, S Chandra Reddy Towers, Hitech City Road
+                  Divert, Madhapur, Hyderabad, Telangana 500081.
                 </span>
               </li>
             </ul>
           </div>
         </div>
 
+        {/* ================= DIVIDER ================= */}
+        <div className="border-t border-white/20 mt-16"></div>
+
         {/* ================= BOTTOM BAR ================= */}
-        <div className="border-t border-gray-600 mt-14 py-6 flex flex-col md:flex-row items-center justify-between">
+        <div className="py-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} Sathya Softech. All rights reserved.
           </p>
 
-          {/* Social Icons */}
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <a
-              href="https://www.facebook.com/profile.php?id=61586973818035"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebookF className="hover:text-orange-500 transition cursor-pointer" />
-            </a>
-
-            <a
-              href="https://x.com/sathyasoftechin"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaTwitter className="hover:text-orange-500 transition cursor-pointer" />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/company/sathyasoftech-in/posts/?feedView=all"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedinIn className="hover:text-orange-500 transition cursor-pointer" />
-            </a>
-
-            <a
-              href="https://www.instagram.com/sathya.softechin/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram className="hover:text-orange-500 transition cursor-pointer" />
-            </a>
+          <div className="flex gap-6 text-sm">
+            <Link to="/privacy" className="hover:text-orange-500 transition">
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="hover:text-orange-500 transition">
+              Terms of Service
+            </Link>
+            <Link to="/cookies" className="hover:text-orange-500 transition">
+              Cookie Policy
+            </Link>
           </div>
         </div>
-        <Link to="/terms">
-          <div className="text-center py-6 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-sm text-gray-400 text-center">
-            Terms and Conditions
-          </p>
-        </div>
-        </Link>
-        
       </div>
     </footer>
   );
