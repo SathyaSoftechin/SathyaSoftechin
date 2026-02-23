@@ -193,7 +193,7 @@ const About = () => {
                 bio: "Strategic leader driving innovation, growth, and long-term digital transformation initiatives.",
               },
               {
-                name: "Vishnu",
+                name: "Vishnu Ippili",
                 role: "Managing Director",
                 bio: "Oversees company strategy and operational excellence across departments.",
                 image: vishnu,
