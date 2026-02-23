@@ -11,13 +11,17 @@ import customIcon from "../assets/icons/custom.png";
 import cyberIcon from "../assets/icons/cyber.png";
 import supportIcon from "../assets/icons/support.png";
 import bg from "../assets/images/bg-3.png";
+import mahesh from "../assets/images/leadership/mahesh.jpeg";
+import krishna from "../assets/images/leadership/krishna.png";
+import vishnu from "../assets/images/leadership/vishnu.jpeg";
 
 const About = () => {
-  const IMAGE_SIZE = 80; // 🔥 change this to 64, 72, 80 anytime
+  const IMAGE_SIZE = 80;
 
   return (
     <main className="w-full">
-      {/* ================= HERO / INTRO ================= */}
+
+      {/* ================= HERO ================= */}
       <section className="bg-gray-100 pt-16">
         <div className="max-w-7xl mx-auto py-12 text-center">
           <h1 className="text-3xl md:text-5xl font-serifDisplay font-bold text-gray-900">
@@ -58,7 +62,6 @@ const About = () => {
       </section>
 
       {/* ================= MISSION & VISION ================= */}
-
       <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
           {[
@@ -77,35 +80,22 @@ const About = () => {
           ].map((item) => (
             <div
               key={item.title}
-              className="group bg-orange-50 rounded-3xl p-10 shadow-sm 
-                   hover:shadow-lg transition-all duration-300 
-                   flex gap-6 items-start"
+              className="group bg-orange-50 rounded-3xl p-10 shadow-sm hover:shadow-lg transition-all duration-300 flex gap-6 items-start"
             >
-              {/* Icon / Image */}
-              <div className="flex-shrink-0 w-20 h-20 rounded-xl flex items-center justify-center">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="object-contain"
-                />
+              <div className="flex-shrink-0 w-20 h-20 flex items-center justify-center">
+                <img src={item.image} alt={item.title} className="object-contain" />
               </div>
 
-              {/* Content */}
-              <div className="flex flex-col">
+              <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {item.title}
                 </h3>
-
                 <p className="text-gray-600 leading-relaxed mb-5">
                   {item.desc}
                 </p>
-
-                {/* Read More Button */}
                 <Link
                   to={item.link}
-                  className="inline-flex items-center w-fit 
-                       text-orange-500 font-medium 
-                       hover:text-orange-600 transition"
+                  className="text-orange-500 font-medium hover:text-orange-600 transition"
                 >
                   Read More →
                 </Link>
@@ -115,68 +105,25 @@ const About = () => {
         </div>
       </section>
 
-      {/* ================= WHAT WE DO (WITH IMAGES) ================= */}
       {/* ================= WHAT WE DO ================= */}
       <section className="relative max-w-7xl mx-auto px-6 py-24 overflow-hidden">
-        {/* Decorative Background Image */}
-        <div
-          className="absolute -left-40 top-1/2 -translate-y-1/2 
-               w-[700px] h-[700px] 
-               bg-no-repeat bg-contain opacity-40 
-               pointer-events-none"
-          style={
-            {
-              // backgroundImage: "url('/src/assets/images/bg-1.png')",
-            }
-          }
-        />
-
-        {/* Section Heading */}
-        <h2 className="relative z-10 text-2xl md:text-3xl font-bold text-center mb-14">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-14">
           What We Do
         </h2>
 
-        {/* Cards */}
-        <div className="relative z-10 grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
           {[
-            {
-              title: "UI/UX Design",
-              desc: "User-centered designs that enhance engagement and usability.",
-              image: uiuxIcon,
-            },
-            {
-              title: "Web Development",
-              desc: "Scalable, secure, and high-performance web applications.",
-              image: webIcon,
-            },
-            {
-              title: "Mobile App Development",
-              desc: "Robust Android and iOS applications built for growth.",
-              image: mobileIcon,
-            },
-            {
-              title: "Custom Software",
-              desc: "Tailored software solutions aligned with business goals.",
-              image: customIcon,
-            },
-            {
-              title: "Cyber Security",
-              desc: "Advanced security solutions to protect digital assets.",
-              image: cyberIcon,
-            },
-            {
-              title: "Support & Maintenance",
-              desc: "Ongoing support to ensure reliability and performance.",
-              image: supportIcon,
-            },
+            { title: "UI/UX Design", desc: "User-centered designs that enhance engagement and usability.", image: uiuxIcon },
+            { title: "Web Development", desc: "Scalable, secure, and high-performance web applications.", image: webIcon },
+            { title: "Mobile App Development", desc: "Robust Android and iOS applications built for growth.", image: mobileIcon },
+            { title: "Custom Software", desc: "Tailored software solutions aligned with business goals.", image: customIcon },
+            { title: "Cyber Security", desc: "Advanced security solutions to protect digital assets.", image: cyberIcon },
+            { title: "Support & Maintenance", desc: "Ongoing support to ensure reliability and performance.", image: supportIcon },
           ].map((item) => (
             <div
               key={item.title}
-              className="group bg-white rounded-2xl p-8 shadow-sm 
-                   hover:shadow-lg hover:-translate-y-1 
-                   transition-all duration-300 flex gap-6 items-start"
+              className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex gap-6 items-start"
             >
-              {/* Image (no background) */}
               <div className="flex-shrink-0">
                 <img
                   src={item.image}
@@ -186,7 +133,6 @@ const About = () => {
                 />
               </div>
 
-              {/* Content */}
               <div>
                 <h3 className="font-semibold text-lg mb-2 text-gray-900 group-hover:text-orange-500 transition">
                   {item.title}
@@ -212,26 +158,10 @@ const About = () => {
 
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-14">
             {[
-              {
-                title: "Problem-First",
-                desc: "We solve real problems, not build technology for its own sake.",
-                icon: "💡",
-              },
-              {
-                title: "User-Centric",
-                desc: "Users’ trust, safety, and time guide every decision we make.",
-                icon: "❤️",
-              },
-              {
-                title: "Transparency",
-                desc: "We build trust through honesty and clear communication.",
-                icon: "👁️",
-              },
-              {
-                title: "Quality",
-                desc: "We deliver reliable, secure, and polished products.",
-                icon: "🏅",
-              },
+              { title: "Problem-First", desc: "We solve real problems, not build technology for its own sake.", icon: "💡" },
+              { title: "User-Centric", desc: "Users’ trust, safety, and time guide every decision we make.", icon: "❤️" },
+              { title: "Transparency", desc: "We build trust through honesty and clear communication.", icon: "👁️" },
+              { title: "Quality", desc: "We deliver reliable, secure, and polished products.", icon: "🏅" },
             ].map((item) => (
               <div key={item.title} className="hover:-translate-y-2 transition">
                 <div className="w-20 h-20 mx-auto rounded-full bg-orange-50 flex items-center justify-center mb-6 text-2xl">
@@ -239,6 +169,79 @@ const About = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
                 <p className="text-gray-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= LEADERSHIP TEAM ================= */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Our Leadership Team
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto mb-16">
+            The visionaries driving innovation, strategy, and execution at Sathya Softechin.
+          </p>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12">
+            {[
+              {
+                name: "V. Sathya Reddy",
+                role: "Founder & Managing Director",
+                bio: "Strategic leader driving innovation, growth, and long-term digital transformation initiatives.",
+              },
+              {
+                name: "Vishnu",
+                role: "Managing Director",
+                bio: "Oversees company strategy and operational excellence across departments.",
+                image: vishnu,
+              },
+              {
+                name: "Krishna. Ch",
+                role: "CEO",
+                bio: "Leads execution, performance strategy, and business scaling initiatives.",
+                image: krishna,
+              },
+              {
+                name: "Mahesh",
+                role: "Business Development Manager (BDM)",
+                bio: "Focused on partnerships, client acquisition, and sustainable business growth.",
+                image: mahesh,
+              },
+            ].map((member, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden group"
+              >
+                {/* Image Section */}
+                <div className="relative h-72 overflow-hidden">
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300" />
+                  )}
+
+                  {/* Slide Up Bio Panel */}
+                  <div className="absolute bottom-0 left-0 w-full bg-white p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out shadow-lg">
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      {member.bio}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Name & Role */}
+                <div className="p-6 text-center">
+                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-orange-500 transition">
+                    {member.name}
+                  </h3>
+                  <p className="text-gray-600 mt-2">{member.role}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -270,6 +273,7 @@ const About = () => {
           </a>
         </div>
       </section>
+
     </main>
   );
 };
