@@ -8,8 +8,10 @@ import Approach2 from "../assets/images/approach2.png";
 /* Project Images */
 import Project1 from "../assets/images/hlopg-logo.png";
 import Project2 from "../assets/images/yaritrip-logo.png";
-import Project3 from "../assets/images/yellaa.png";
+import Project3 from "../assets/images/Haraa-logo.png";
 import Project4 from "../assets/images/yellaa-logo.jpeg";
+import Project5 from "../assets/images/srmedia.jpeg";
+import Project6 from "../assets/images/srworkforce.jpeg";
 
 /* Video */
 import CtaVideo from "../assets/videos/bg-video.mp4";
@@ -41,29 +43,29 @@ const projects = [
     title: "SR Media",
     category: "Branding Agency",
     type: "Website",
-    image: Project4,
+    image: Project5,
   },
   {
     id: 5,
     title: "Haraa Gold, Diamonds & Silver",
     category: "Jewellery",
     type: "Custom Software",
-    image: Project4,
+    image: Project3,
   },
   {
     id: 6,
     title: "SR Work Force",
     category: "Employee Management",
     type: "Custom Software",
-    image: Project2,
+    image: Project6,
   },
-  {
-    id: 7,
-    title: "Sharuji Logistics",
-    category: "Logistics",
-    type: "Custom Software",
-    image: Project2,
-  },
+  // {
+  //   id: 7,
+  //   title: "Sharuji Logistics",
+  //   category: "Logistics",
+  //   type: "Custom Software",
+  //   image: Project2,
+  // },
 ];
 
 const FILTERS = ["All", "Mobile App", "Website", "Custom Software"];
