@@ -200,7 +200,7 @@ const About = () => {
               },
               {
                 name: "Krishna. Ch",
-                role: "CEO",
+                role: "C.E.O",
                 bio: "Leads execution, performance strategy, and business scaling initiatives.",
                 image: krishna,
               },
