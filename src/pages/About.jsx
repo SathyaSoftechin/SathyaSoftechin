@@ -14,6 +14,8 @@ import bg from "../assets/images/bg-3.png";
 import mahesh from "../assets/images/leadership/mahesh.jpeg";
 import krishna from "../assets/images/leadership/krishna.png";
 import vishnu from "../assets/images/leadership/vishnu.jpeg";
+import eshwar from "../assets/images/leadership/eshwar.png";
+
 
 const About = () => {
   const IMAGE_SIZE = 80;
@@ -209,6 +211,12 @@ const About = () => {
                 role: "Business Development Manager (BDM)",
                 bio: "Focused on partnerships, client acquisition, and sustainable business growth.",
                 image: mahesh,
+              },
+              {
+                name: "Eshwar Rao",
+                role: "Business Development Manager (BDM)",
+                bio: "Focused on partnerships, client acquisition, and sustainable business growth.",
+                image: eshwar,
               },
             ].map((member, index) => (
               <div
