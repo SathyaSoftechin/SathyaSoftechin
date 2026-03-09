@@ -8,7 +8,7 @@ import Approach2 from "../assets/images/approach2.png";
 /* Project Images */
 import Project1 from "../assets/images/hlopg-logo.png";
 import Project2 from "../assets/images/yaritrip-logo.png";
-import Project3 from "../assets/images/Haraa-logo.png";
+import Project3 from "../assets/images/haraa.png";
 import Project4 from "../assets/images/yellaa-logo.jpeg";
 import Project5 from "../assets/images/srmedia.jpeg";
 import Project6 from "../assets/images/srworkforce.jpeg";
