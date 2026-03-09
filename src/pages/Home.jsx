@@ -2,7 +2,7 @@ import Hero from "../assets/images/hero.jpg";
 import HeroImg from "../assets/images/hero.png";
 import srmedia from "../assets/images/srmedia.png";
 import gk from "../assets/images/gk.png";
-import haraaLogo from "../assets/images/haraa.png";
+import haraa from "../assets/images/haraa.png";
 import yaritrip from "../assets/images/yaritrip-logo.png";
 
 import uiuxIcon from "../assets/icons/uiux.png";
@@ -28,7 +28,7 @@ const Home = () => {
   const clients = [
     { name: "SR Media", logo: srmedia },
     { name: "GK", logo: gk },
-    { name: "Haraa", logo: haraaLogo },
+    { name: "Haraa", logo: haraa },
     { name: "Yaritrip", logo: yaritrip },
   ];
 
@@ -93,7 +93,7 @@ const Home = () => {
       name: "Sandi Doe",
       role: "Marketing",
       desc: "Their team delivered an exceptional solution that transformed our digital presence and business operations.",
-      image: haraaLogo,
+      image: haraa,
       rating: 4,
     },
     {
