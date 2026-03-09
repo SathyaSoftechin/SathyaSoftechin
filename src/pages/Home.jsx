@@ -2,7 +2,7 @@ import Hero from "../assets/images/hero.jpg";
 import HeroImg from "../assets/images/hero.png";
 import srmedia from "../assets/images/srmedia.png";
 import gk from "../assets/images/gk.png";
-import haraaLogo from "../assets/images/haraa-logo.png";
+import haraaLogo from "../assets/images/haraa.png";
 import yaritrip from "../assets/images/yaritrip-logo.png";
 
 import uiuxIcon from "../assets/icons/uiux.png";
