@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import AboutImage from "../assets/images/services.png";
 import Who from "../assets/images/who.png";
-import Mission from "../assets/images/mission.png";
-import VisionImg from "../assets/images/vision.png";
+// import Mission from "../assets/images/mission.png";
+// import VisionImg from "../assets/images/vision.png";
 
 import uiuxIcon from "../assets/icons/uiux.png";
 import webIcon from "../assets/icons/webdev.png";
@@ -16,44 +16,47 @@ import krishna from "../assets/images/leadership/krishna.png";
 import vishnu from "../assets/images/leadership/vishnu.jpeg";
 import eshwar from "../assets/images/leadership/eshwar.png";
 
-
 const About = () => {
   const IMAGE_SIZE = 80;
 
   return (
     <main className="w-full">
-
       {/* ================= HERO ================= */}
-      <section className="bg-gray-100 pt-16">
-        <div className="max-w-7xl mx-auto py-12 text-center">
-          <h1 className="text-3xl md:text-5xl font-serifDisplay font-bold text-gray-900">
-            About Sathya Softech-in
+      <section className="bg-gray-100 pt-16 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto py-12">
+          <h1 className="text-3xl md:text-5xl font-serifDisplay font-bold text-gray-900 ml-20">
+            Building Intelligent Software for <br />
+            <span className="text-orange-500">Modern Businesses</span>
           </h1>
-          <p className="mt-6 max-w-3xl mx-auto text-gray-600 text-lg">
-            We are a technology-driven software company focused on building
-            scalable, secure, and high-impact digital solutions for businesses
-            across industries.
+          <p className="mt-6 max-w-3xl mx-auto text-gray-600 text-lg ml-20">
+            We design scalable digital products, AI-powered solutions, and
+            innovative technology experiences that drive business growth. Our
+            approach combines creativity, strategy, and advanced technology to
+            deliver meaningful results.We help businesses transform ideas into
+            powerful digital solutions for the future.
           </p>
         </div>
+        <img src={AboutImage} alt="About" className="w-96 rounded-xl ml-10" />
       </section>
 
       {/* ================= WHO WE ARE ================= */}
       <section className="max-w-7xl mx-auto px-10 py-20">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 font-serif text-center">
+          Who We Are
+        </h2>
         <div className="grid md:grid-cols-2 gap-14 items-center">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-              Who We Are
-            </h2>
-            <p className="text-black mb-4 leading-relaxed">
-              Sathya Softech-in is a software development company dedicated to
-              delivering high-quality digital products through thoughtful
-              design, strong engineering, and a deep understanding of business
-              needs.
+            <p className="text-black mb-4 leading-relaxed font-semibold text-[28px]">
+              A team of innovators building scalable technology solutions for
+              the digital future.
             </p>
-            <p className="text-gray-900 leading-relaxed">
-              We work closely with startups, enterprises, and growing businesses
-              to transform ideas into reliable software solutions that drive
-              growth and long-term value.
+            <p className="text-gray-900 leading-relaxed text-[18px]">
+              Born from a passion for innovation, we help businesses evolve
+              through intelligent technology. Our team combines creativity,
+              engineering, and AI to build digital experiences that scale
+              globally. We focus on delivering solutions that drive growth,
+              efficiency, and long-term success. Together, we transform ideas
+              into impactful digital products for the future.
             </p>
           </div>
 
@@ -65,28 +68,35 @@ const About = () => {
 
       {/* ================= MISSION & VISION ================= */}
       <section className="bg-gray-50 py-20">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+        <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 font-serif text-center">
+          What Makes Us Different
+        </div>
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 border-black">
           {[
             {
-              title: "Our Mission",
-              desc: "To empower businesses with innovative, secure, and scalable digital solutions that solve real-world problems.",
-              image: Mission,
-              link: "/mission",
+              title: "🧠 Innovation First",
+              desc: "We leverage cutting-edge technologies and AI driven approaches to build future ready digital solutions that keep businesses ahead of the curve.",
             },
             {
-              title: "Our Vision",
-              desc: "To become a trusted technology partner by delivering reliable products, exceptional UX, and long-term value.",
-              image: VisionImg,
-              link: "/vision",
+              title: "⚡ Speed & Scalability",
+              desc: "Our agile development process ensures rapid delivery while building scalable systems designed to grow with your business needs.",
+            },
+            {
+              title: "❤️ Client Partnership",
+              desc: "We collaborate closely with our clients, understanding their vision and becoming long-term technology partners rather than just service providers.",
             },
           ].map((item) => (
             <div
               key={item.title}
-              className="group bg-orange-50 rounded-3xl p-10 shadow-sm hover:shadow-lg transition-all duration-300 flex gap-6 items-start"
+              className="group bg-orange-50 rounded-3xl p-10 shadow-sm hover:shadow-lg transition-all duration-300 flex gap-6 items-start "
             >
-              <div className="flex-shrink-0 w-20 h-20 flex items-center justify-center">
-                <img src={item.image} alt={item.title} className="object-contain" />
-              </div>
+              {/* <div className="flex-shrink-0 w-20 h-20 flex items-center justify-center">
+                <img
+                  // src={item.image}
+                  alt={item.title}
+                  className="object-contain"
+                />
+              </div> */}
 
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -95,12 +105,12 @@ const About = () => {
                 <p className="text-gray-600 leading-relaxed mb-5">
                   {item.desc}
                 </p>
-                <Link
+                {/* <Link
                   to={item.link}
                   className="text-orange-500 font-medium hover:text-orange-600 transition"
                 >
                   Read More →
-                </Link>
+                </Link> */}
               </div>
             </div>
           ))}
@@ -109,71 +119,87 @@ const About = () => {
 
       {/* ================= WHAT WE DO ================= */}
       <section className="relative max-w-7xl mx-auto px-6 py-24 overflow-hidden">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-14">
-          What We Do
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-14 font-serif">
+          Technologies We Work With
         </h2>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
           {[
-            { title: "UI/UX Design", desc: "User-centered designs that enhance engagement and usability.", image: uiuxIcon },
-            { title: "Web Development", desc: "Scalable, secure, and high-performance web applications.", image: webIcon },
-            { title: "Mobile App Development", desc: "Robust Android and iOS applications built for growth.", image: mobileIcon },
-            { title: "Custom Software", desc: "Tailored software solutions aligned with business goals.", image: customIcon },
-            { title: "Cyber Security", desc: "Advanced security solutions to protect digital assets.", image: cyberIcon },
-            { title: "Support & Maintenance", desc: "Ongoing support to ensure reliability and performance.", image: supportIcon },
+            {
+              title: "🌐 Frontend",
+              desc: ["React", "Next.js", "HTML5", "Tailwind CSS"],
+              // image: uiuxIcon,
+            },
+            {
+              title: "⚙ Backend",
+              desc: [
+                "Node Js", 
+                "Python", 
+                "Java", 
+                "Spring Boot", 
+                "Express Js", 
+                "REST API's",
+              ],
+              // image: webIcon,
+            },
+            {
+              title: "☁ Cloud",
+              desc: [
+                "AWS", 
+                "Microsoft Azure", 
+                "Google Cloud", 
+                "Docker"
+              ],
+              // image: mobileIcon,
+            },
+            {
+              title: "🤖 AI & Automation",
+              desc: [
+                "Machine Learning",
+                "Open AI APIs",
+                "Data Analytics",
+                "Automation Tools",
+              ],
+              // image: customIcon,
+            },
+            // {
+            //   title: "Cyber Security",
+            //   desc: "Advanced security solutions to protect digital assets.",
+            //   image: cyberIcon,
+            // },
+            // {
+            //   title: "Support & Maintenance",
+            //   desc: "Ongoing support to ensure reliability and performance.",
+            //   image: supportIcon,
+            // },
           ].map((item) => (
             <div
               key={item.title}
               className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex gap-6 items-start"
             >
-              <div className="flex-shrink-0">
+              {/* <div className="flex-shrink-0">
                 <img
                   src={item.image}
                   alt={item.title}
                   style={{ width: IMAGE_SIZE, height: IMAGE_SIZE }}
                   className="object-contain"
                 />
-              </div>
+              </div> */}
 
               <div>
-                <h3 className="font-semibold text-lg mb-2 text-gray-900 group-hover:text-orange-500 transition">
+                <h3 className="font-semibold text-xl mb-2 text-gray-900 group-hover:text-orange-500 transition">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {item.desc}
+                <p className="text-gray-600 text-[15px] leading-relaxed">
+                  <ul className="list-disc pl-5">
+                    {item.desc.map((point, index) => (
+                      <li key={index}>{point}</li>
+                    ))}
+                  </ul>
                 </p>
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ================= CORE VALUES ================= */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Our Core Values
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-16">
-            These principles guide everything we do at Sathya Softech.
-          </p>
-
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-14">
-            {[
-              { title: "Problem-First", desc: "We solve real problems, not build technology for its own sake.", icon: "💡" },
-              { title: "User-Centric", desc: "Users’ trust, safety, and time guide every decision we make.", icon: "❤️" },
-              { title: "Transparency", desc: "We build trust through honesty and clear communication.", icon: "👁️" },
-              { title: "Quality", desc: "We deliver reliable, secure, and polished products.", icon: "🏅" },
-            ].map((item) => (
-              <div key={item.title} className="hover:-translate-y-2 transition">
-                <div className="w-20 h-20 mx-auto rounded-full bg-orange-50 flex items-center justify-center mb-6 text-2xl">
-                  {item.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -184,7 +210,8 @@ const About = () => {
             Our Leadership Team
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-16">
-            The visionaries driving innovation, strategy, and execution at Sathya Softechin.
+            The visionaries driving innovation, strategy, and execution at
+            Sathya Softechin.
           </p>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12">
@@ -281,7 +308,6 @@ const About = () => {
           </a>
         </div>
       </section>
-
     </main>
   );
 };

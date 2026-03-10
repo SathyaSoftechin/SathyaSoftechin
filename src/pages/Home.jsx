@@ -108,10 +108,10 @@ const Home = () => {
   return (
     <main className="w-full bg-white text-gray-900">
       {/* ================= HERO / INTRO ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section className="max-w-7xl mx-auto px-6 py-12">
+        <div className="grid md:grid-cols-2 gap-12 items-center ml-10">
           {/* LEFT CONTENT */}
-          <div className="ml-16">
+          <div className="ml-14">
             <h4 className="text-4xl md:text-5xl font-bold leading-tight mb-6 font-serif">
               Innovation through Products, Services, and{" "}
               <span className="text-orange-500">AI Powered Solutions</span>
@@ -182,7 +182,7 @@ const Home = () => {
         </div>
 
         {/* FEATURE 2 */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center ml-20">
           <div>
             <h3 className="text-2xl font-semibold mb-4">
               We develop smart mobile applications that bring ideas to life.
@@ -275,10 +275,10 @@ const Home = () => {
       </section>
 
       {/* ================= CLIENT LOGOS ================= */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-400">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h3 className="text-4xl font-bold mb-10 text-gray-700">
-            Our Clients
+          <h3 className="text-4xl font-bold mb-10 text-black font-serif">
+            Our Proud Clients
           </h3>
 
           <div className="flex justify-center items-center gap-16 flex-wrap opacity-80">
@@ -287,7 +287,7 @@ const Home = () => {
                 key={client.name}
                 src={client.logo}
                 alt={client.name}
-                className="w-72 object-contain"
+                className="w-56 object-contain"
               />
             ))}
           </div>
