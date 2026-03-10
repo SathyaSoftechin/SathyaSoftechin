@@ -125,10 +125,12 @@ const Home = () => {
               <span className="font-bold">AI powered solutions</span> tailored
               for modern businesses.
             </p>
-
-            <button className="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-orange-600 transition">
+            <a href="/about">
+              <button className="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-orange-600 transition">
               Learn More
             </button>
+            </a>
+            
           </div>
 
           {/* RIGHT IMAGE */}
@@ -267,9 +269,11 @@ const Home = () => {
               economy.
             </p>
 
-            <button className="border border-orange-500 text-orange-500 px-6 py-3 rounded-md hover:bg-orange-500 hover:text-white transition">
-              Discover More
-            </button>
+            <a href="/about">
+              <button className="border border-orange-500 text-orange-500 px-6 py-3 rounded-md hover:bg-orange-500 hover:text-white transition">
+                Discover More
+              </button>
+            </a>
           </div>
         </div>
       </section>
