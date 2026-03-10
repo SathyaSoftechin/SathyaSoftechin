@@ -35,9 +35,7 @@ const Navbar = () => {
 
     setShowPill(true);
 
-    const activeLink = navRef.current?.querySelector(
-      'a[aria-current="page"]'
-    );
+    const activeLink = navRef.current?.querySelector('a[aria-current="page"]');
 
     if (!activeLink || !navRef.current) return;
 
@@ -60,11 +58,12 @@ const Navbar = () => {
       }`}
     >
       <div className="relative max-w-7xl mx-auto h-[88px] px-6 flex items-center">
-
         {/* LEFT: Logo */}
-        <div className="flex items-center translate-y-[1px]">
-          <img src="/logo3.png" alt="Sathya Softech" className="h-12" />
-        </div>
+        <a href="/">
+          <div className="flex items-center translate-y-[1px]">
+            <img src="/logo3.png" alt="Sathya Softech" className="h-12" />
+          </div>
+        </a>
 
         {/* CENTER: Nav Links */}
         <div className="absolute left-1/2 -translate-x-1/2 hidden md:block">
