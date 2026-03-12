@@ -138,7 +138,6 @@ const About = () => {
                 "Java", 
                 "Spring Boot", 
                 "Express Js", 
-                "REST API's",
               ],
               // image: webIcon,
             },
@@ -147,8 +146,7 @@ const About = () => {
               desc: [
                 "AWS", 
                 "Microsoft Azure", 
-                "Google Cloud", 
-                "Docker"
+                "Google Cloud"
               ],
               // image: mobileIcon,
             },
@@ -156,7 +154,6 @@ const About = () => {
               title: "🤖 AI & Automation",
               desc: [
                 "Machine Learning",
-                "Open AI APIs",
                 "Data Analytics",
                 "Automation Tools",
               ],
