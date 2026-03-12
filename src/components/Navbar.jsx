@@ -157,7 +157,6 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Portfolio", path: "/portfolio" },
-  { name: "Career", path: "/career" },
 ];
 
 const Navbar = () => {
@@ -167,8 +166,9 @@ const Navbar = () => {
   /* Sticky navbar */
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 16);
+      setScrolled(window.scrollY > 20);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -179,30 +179,34 @@ const Navbar = () => {
         scrolled ? "sticky bg-white shadow-md" : "relative bg-white"
       }`}
     >
-      <div className="max-w-7xl mx-auto h-[88px] px-6 flex items-center">
+      <div className="max-w-7xl mx-auto h-[90px] px-6 flex items-center">
 
         {/* Logo */}
         <a href="/" className="flex items-center">
-          <img src="/logo3.png" alt="Sathya Softech" className="h-12" />
+          <img src="/logo3.png" alt="Logo" className="h-12" />
         </a>
 
-        {/* Center Nav */}
-        <div className="hidden md:flex mx-auto gap-10 items-center">
+        {/* Center Navigation */}
+        <div className="hidden md:flex mx-auto items-center gap-10">
+
           {navLinks.map((link) => (
             <NavLink
               key={link.name}
               to={link.path}
-              className={({ isActive }) =>
-                `px-5 py-2 text-sm font-medium rounded-full transition ${
-                  isActive
-                    ? "bg-orange-100 text-orange-600 border border-orange-400"
-                    : "text-gray-800 hover:text-orange-500"
-                }`
-              }
+              className="text-gray-800 text-lg font-medium hover:text-orange-500 transition"
             >
               {link.name}
             </NavLink>
           ))}
+
+          {/* Career Pill Button */}
+          <NavLink
+            to="/career"
+            className="px-12 py-4 text-3xl font-bold text-orange-500 border-[5px] border-orange-500 rounded-full bg-white shadow-[0_10px_20px_rgba(0,0,0,0.25)]"
+          >
+            Career
+          </NavLink>
+
         </div>
 
         {/* Contact Button */}
@@ -228,6 +232,7 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="flex flex-col px-6 py-4 space-y-4">
+
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
@@ -240,12 +245,21 @@ const Navbar = () => {
             ))}
 
             <NavLink
+              to="/career"
+              onClick={() => setMobileOpen(false)}
+              className="text-orange-500 font-bold"
+            >
+              Career
+            </NavLink>
+
+            <NavLink
               to="/contact"
               onClick={() => setMobileOpen(false)}
               className="text-orange-500 font-medium"
             >
               Contact Us
             </NavLink>
+
           </div>
         </div>
       )}
