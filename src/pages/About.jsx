@@ -127,7 +127,7 @@ const About = () => {
           {[
             {
               title: "🌐 Frontend",
-              desc: ["React", "Next.js", "HTML5", "Tailwind CSS"],
+              desc: ["React js", "React Native", "Next js"],
               // image: uiuxIcon,
             },
             {
