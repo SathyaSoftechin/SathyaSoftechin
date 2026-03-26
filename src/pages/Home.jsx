@@ -541,7 +541,7 @@ import CloudImg from "../assets/images/cloud.png";
 import AiImg from "../assets/images/aiml.png";
 import sriram from "../assets/images/sriramnavami.png";
 import srirammain from "../assets/images/RamNavami-26-03.png";
-import sriramMobile from "../assets/images/RamNavami-mob-26-03.jpg";
+import sriramMobile from "../assets/images/Ramnavami-mob-26-03.jpg";
 
 import petal1 from "../assets/images/flowers/petal1.png";
 import petal2 from "../assets/images/flowers/petal2.png";
