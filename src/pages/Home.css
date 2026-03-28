@@ -1,4 +1,4 @@
-/* @keyframes fall {
+/* /* @keyframes fall {
   0% {
     transform: translateY(-10vh) rotate(0deg);
     opacity: 1;
@@ -21,7 +21,7 @@
 */
 
 
-@keyframes fall {
+/* @keyframes fall {
   0% {
     transform: translateY(-10vh) translateX(0px) rotate(0deg);
     opacity: 1;
@@ -58,4 +58,4 @@
 
 .animate-fadeIn {
   animation: fadeIn 0.5s ease;
-}
+} */ 
