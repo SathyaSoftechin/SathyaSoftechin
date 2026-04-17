@@ -1,68 +1,85 @@
 import React from "react";
 import { motion } from "framer-motion";
-import heroImg from "../../assets/images/uiux-design.png"; // replace with your image
+import {
+  FaMobileAlt,
+  FaApple,
+  FaAndroid,
+  FaCogs,
+  FaRocket,
+} from "react-icons/fa";
 
-const uxServices = [
+// 🔷 IMAGE
+import heroImg from "../../assets/images/mobile-app.png";
+
+// 🔷 SERVICES
+const mobileServices = [
   {
-    title: "User Research",
-    desc: "Understanding behavior patterns to build sound structural foundations.",
+    icon: <FaAndroid />,
+    title: "Android App Development",
+    desc: "Building robust and scalable Android apps tailored to diverse industry requirements.",
   },
   {
-    title: "Wireframing",
-    desc: "Blueprints that prioritize flow and information hierarchy above all else.",
+    icon: <FaApple />,
+    title: "iOS App Development",
+    desc: "High-performance iOS applications built with seamless user experiences and reliability.",
   },
   {
-    title: "UI Design",
-    desc: "Aesthetic interfaces meeting functional software engineering standards.",
+    icon: <FaMobileAlt />,
+    title: "Cross-Platform Apps",
+    desc: "Apps that work flawlessly across multiple devices while maintaining quality and speed.",
   },
   {
-    title: "Prototyping",
-    desc: "Interactive simulations that breathe life into static concepts before launch.",
+    icon: <FaCogs />,
+    title: "App Maintenance & Support",
+    desc: "Ongoing support, performance monitoring, and updates to ensure app stability.",
   },
 ];
 
+// 🔷 STEPS
 const steps = [
   {
-    title: "Research",
-    desc: "Deep dive into user pain points and market gaps.",
+    title: "Research & Planning",
+    desc: "Deep analysis of market needs and user expectations.",
   },
   {
-    title: "Ideation",
-    desc: "Brainstorming structural flows and creative pivots.",
+    title: "UI/UX Design",
+    desc: "Designing intuitive and engaging mobile experiences.",
   },
   {
-    title: "Design",
-    desc: "Iterative crafting of high-fidelity visual assets.",
+    title: "App Development",
+    desc: "Building scalable, high-performance mobile applications.",
   },
   {
-    title: "Testing",
-    desc: "Usability audits to ensure peak performance.",
+    title: "Testing & QA",
+    desc: "Ensuring reliability through rigorous testing processes.",
+  },
+  {
+    title: "Deployment",
+    desc: "Launching apps smoothly on App Store and Play Store.",
   },
 ];
 
-const UiUxDesign = () => {
+const MobileApp = () => {
   return (
     <div className="bg-gray-50 min-h-screen px-6 md:px-16 py-16">
-      
-      {/* 🔷 HERO SECTION */}
+      {/* 🔷 HERO */}
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        
         {/* Left */}
         <div>
           <span className="bg-orange-100 text-orange-500 px-4 py-1 rounded-full text-sm font-semibold">
-            UX ARCHITECTURE
+            MOBILE SOLUTIONS
           </span>
 
           <h1 className="text-4xl md:text-5xl font-bold mt-6 leading-tight text-gray-900">
-            <span className="text-orange-500">Designing</span><br />
-            Experiences<br />
-            That Users Love
+            Building Powerful <span className="text-orange-500">Mobile</span>
+            <br />
+            Experiences
           </h1>
 
           <p className="text-gray-600 mt-6 leading-relaxed max-w-lg">
-            We don’t just build interfaces, we craft digital galleries.
-            Elevate your product with weightless, sophisticated design
-            architecture that guides every interaction with surgical precision.
+            Transform your vision into high-performance Android and iOS
+            applications. We combine architecture excellence with stunning UI to
+            create apps that users love and businesses rely on.
           </p>
         </div>
 
@@ -74,59 +91,58 @@ const UiUxDesign = () => {
         >
           <img
             src={heroImg}
-            alt="UI UX Design"
-            className="rounded-2xl shadow-lg"
+            alt="Mobile App Development"
+            // className="rounded-2xl shadow-lg"
           />
         </motion.div>
       </div>
 
-      {/* 🔷 SERVICES SECTION */}
+      {/* 🔷 SERVICES */}
       <div className="mt-24">
-        <h2 className="text-2xl font-semibold text-gray-900">
-          Architectural Services
-        </h2>
-        <p className="text-gray-500 mt-2">
-          Precision-engineered design cycles for modern SaaS.
+        <h2 className="text-md font-semibold text-orange-500">CAPABILITIES</h2>
+        <p className="text-black mt-2 text-3xl font-bold">
+          Our Mobile Services
         </p>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mt-10">
-          {uxServices.map((item, i) => (
+          {mobileServices.map((item, i) => (
             <motion.div
               key={i}
               whileHover={{ y: -8 }}
               className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300"
             >
-              <div className="w-10 h-10 flex items-center justify-center bg-orange-500 text-white rounded-lg mb-4">
-                {i + 1}
+              <div className="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-lg mb-4 text-xl">
+                {item.icon}
               </div>
 
               <h3 className="font-semibold text-lg text-gray-900">
                 {item.title}
               </h3>
-              <p className="text-gray-500 text-sm mt-2">
-                {item.desc}
-              </p>
+
+              <p className="text-gray-500 text-sm mt-2">{item.desc}</p>
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* 🔷 TIMELINE SECTION */}
+      {/* 🔷 PROCESS */}
       <div className="mt-28 text-center">
         <h2 className="text-2xl font-semibold text-gray-900">
-          The Architectural Path
+          Our Design-First Process
         </h2>
 
         <div className="relative mt-16">
-          
           {/* Line */}
           <div className="absolute top-6 left-0 w-full h-[2px] bg-gray-200"></div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-10 relative z-10">
             {steps.map((step, i) => (
-              <div key={i} className="text-center">
-                
-                <div className="mx-auto w-14 h-14 rounded-full bg-white shadow-md flex items-center justify-center text-orange-500 font-semibold">
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.05 }}
+                className="text-center"
+              >
+                <div className="mx-auto w-14 h-14 rounded-full bg-orange-500 text-white shadow-md flex items-center justify-center font-semibold">
                   {`0${i + 1}`}
                 </div>
 
@@ -137,28 +153,27 @@ const UiUxDesign = () => {
                 <p className="text-gray-500 text-sm mt-2 max-w-xs mx-auto">
                   {step.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* 🔷 CTA SECTION (IMPORTANT FOR CONVERSION) */}
+      {/* 🔷 CTA */}
       <div className="mt-28 bg-orange-500 text-white rounded-3xl p-10 text-center">
-        <h2 className="text-3xl font-bold">
-          Let’s Build Exceptional User Experiences
-        </h2>
+        <h2 className="text-3xl font-bold">Ready to Build Your Mobile App?</h2>
+
         <p className="mt-4 text-orange-100">
-          Partner with us to design intuitive and scalable digital products.
+          Let’s turn your idea into a scalable and high-performing mobile
+          experience.
         </p>
 
         <button className="mt-6 bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
           Get Started
         </button>
       </div>
-
     </div>
   );
 };
 
-export default UiUxDesign;
+export default MobileApp;
