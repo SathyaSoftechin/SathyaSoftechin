@@ -11,7 +11,7 @@ import Project2 from "../assets/images/yaritrip-logo.png";
 import Project3 from "../assets/images/haraa.png";
 import Project4 from "../assets/images/yellaa-logo.jpeg";
 import Project5 from "../assets/images/srmedia.jpeg";
-import Project6 from "../assets/images/srworkforce.jpeg";
+import Project6 from "../assets/images/srworkforce.png";
 
 /* Video */
 import CtaVideo from "../assets/images/portfolio-cta.png";
@@ -20,15 +20,15 @@ const projects = [
   {
     id: 1,
     title: "PG Finder & Hostel Booking App",
-    category: "Booking",
-    type: "Mobile App",
+    category: "Housing",
+    type: "Mobile App, Website",
     image: Project1,
   },
   {
     id: 2,
     title: "Travel Platform",
     category: "Travel",
-    type: "Mobile App",
+    type: "Mobile App, Website",
     image: Project2,
   },
   {

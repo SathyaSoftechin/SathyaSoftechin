@@ -1,20 +1,9 @@
 import { Link } from "react-router-dom";
 import AboutImage from "../assets/images/services.png";
 import Who from "../assets/images/who.png";
-// import Mission from "../assets/images/mission.png";
-// import VisionImg from "../assets/images/vision.png";
 
-import uiuxIcon from "../assets/icons/uiux.png";
-import webIcon from "../assets/icons/webdev.png";
-import mobileIcon from "../assets/icons/mobileapp.png";
-import customIcon from "../assets/icons/custom.png";
-import cyberIcon from "../assets/icons/cyber.png";
-import supportIcon from "../assets/icons/support.png";
-import bg from "../assets/images/bg-3.png";
-import mahesh from "../assets/images/leadership/mahesh.jpeg";
 import krishna from "../assets/images/leadership/krishna.png";
 import vishnu from "../assets/images/leadership/vishnu.jpeg";
-import eshwar from "../assets/images/leadership/eshwar.png";
 
 const About = () => {
   const IMAGE_SIZE = 80;
@@ -36,10 +25,10 @@ const About = () => {
             powerful digital solutions for the future.
           </p>
           <a href="/contact">
-              <button className="ml-20 mt-10 border border-orange-500 text-orange-500 px-10 py-3 rounded-md hover:bg-orange-500 hover:text-white transition">
-                Start a Project
-              </button>
-            </a>
+            <button className="ml-20 mt-10 border border-orange-500 text-orange-500 px-10 py-3 rounded-md hover:bg-orange-500 hover:text-white transition">
+              Start a Project
+            </button>
+          </a>
         </div>
         <img src={AboutImage} alt="About" className="w-96 rounded-xl ml-10" />
       </section>
@@ -51,7 +40,7 @@ const About = () => {
         </h2>
         <div className="grid md:grid-cols-2 gap-14 items-center">
           <div>
-            <p className="text-black mb-4 leading-relaxed font-semibold text-[28px]">
+            <p className="text-black mb-4 leading-relaxed font-semibold text-[23px] font-serif">
               A team of innovators building scalable technology solutions for
               the digital future.
             </p>
@@ -137,31 +126,17 @@ const About = () => {
             },
             {
               title: "⚙ Backend",
-              desc: [
-                "Node Js", 
-                "Python", 
-                "Java", 
-                "Spring Boot", 
-                "Express Js", 
-              ],
+              desc: ["Node Js", "Python", "Java", "Spring Boot", "Express Js"],
               // image: webIcon,
             },
             {
               title: "☁ Cloud",
-              desc: [
-                "AWS", 
-                "Microsoft Azure", 
-                "Google Cloud"
-              ],
+              desc: ["AWS", "Microsoft Azure", "Google Cloud"],
               // image: mobileIcon,
             },
             {
               title: "🤖 AI & Automation",
-              desc: [
-                "Machine Learning",
-                "Data Analytics",
-                "Automation Tools",
-              ],
+              desc: ["Machine Learning", "Data Analytics", "Automation Tools"],
               // image: customIcon,
             },
             // {
@@ -215,91 +190,92 @@ const About = () => {
             The visionaries driving innovation, strategy, and execution at
             Sathya Softechin.
           </p>
+          <div className="flex justify-center">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-6xl w-full">
+              {[
+                {
+                  name: "V. Sathya Reddy",
+                  role: "Founder & Managing Director",
+                  bio: "Strategic leader driving innovation, growth, and long-term digital transformation initiatives.",
+                },
+                {
+                  name: "Vishnu Ippili",
+                  role: "Managing Director",
+                  bio: "Oversees company strategy and operational excellence across departments.",
+                  image: vishnu,
+                },
+                {
+                  name: "Krishna. Ch",
+                  role: "C.E.O",
+                  bio: "Leads execution, performance strategy, and business scaling initiatives.",
+                  image: krishna,
+                },
+                // {
+                //   name: "Mahesh",
+                //   role: "Business Development Manager (BDM)",
+                //   bio: "Focused on partnerships, client acquisition, and sustainable business growth.",
+                //   image: mahesh,
+                // },
+                // {
+                //   name: "Eshwar Rao",
+                //   role: "Business Development Manager (BDM)",
+                //   bio: "Focused on partnerships, client acquisition, and sustainable business growth.",
+                //   image: eshwar,
+                // },
+              ].map((member, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden group"
+                >
+                  {/* Image Section */}
+                  <div className="relative h-72 overflow-hidden">
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300" />
+                    )}
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12">
-            {[
-              {
-                name: "V. Sathya Reddy",
-                role: "Founder & Managing Director",
-                bio: "Strategic leader driving innovation, growth, and long-term digital transformation initiatives.",
-              },
-              {
-                name: "Vishnu Ippili",
-                role: "Managing Director",
-                bio: "Oversees company strategy and operational excellence across departments.",
-                image: vishnu,
-              },
-              {
-                name: "Krishna. Ch",
-                role: "C.E.O",
-                bio: "Leads execution, performance strategy, and business scaling initiatives.",
-                image: krishna,
-              },
-              {
-                name: "Mahesh",
-                role: "Business Development Manager (BDM)",
-                bio: "Focused on partnerships, client acquisition, and sustainable business growth.",
-                image: mahesh,
-              },
-              {
-                name: "Eshwar Rao",
-                role: "Business Development Manager (BDM)",
-                bio: "Focused on partnerships, client acquisition, and sustainable business growth.",
-                image: eshwar,
-              },
-            ].map((member, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden group"
-              >
-                {/* Image Section */}
-                <div className="relative h-72 overflow-hidden">
-                  {member.image ? (
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300" />
-                  )}
+                    {/* Slide Up Bio Panel */}
+                    <div className="absolute bottom-0 left-0 w-full bg-white p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out shadow-lg">
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        {member.bio}
+                      </p>
+                    </div>
+                  </div>
 
-                  {/* Slide Up Bio Panel */}
-                  <div className="absolute bottom-0 left-0 w-full bg-white p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out shadow-lg">
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      {member.bio}
-                    </p>
+                  {/* Name & Role */}
+                  <div className="p-6 text-center">
+                    <h3 className="text-xl font-semibold text-gray-900 group-hover:text-orange-500 transition">
+                      {member.name}
+                    </h3>
+                    <p className="text-gray-600 mt-2">{member.role}</p>
                   </div>
                 </div>
-
-                {/* Name & Role */}
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-orange-500 transition">
-                    {member.name}
-                  </h3>
-                  <p className="text-gray-600 mt-2">{member.role}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="relative py-28 overflow-hidden">
-        <div className="absolute inset-0 flex justify-center items-end pointer-events-none">
+      <section className="relative py-24 overflow-hidden">
+        {/* <div className="absolute inset-0 flex justify-center items-end pointer-events-none">
           <img
             src={bg}
             alt=""
             className="w-[1500px] max-w-none translate-y-20"
           />
-        </div>
-        <div className="max-w-7xl mx-auto px-6 text-center text-slate-50 relative z-10">
+        </div> */}
+        <div className="max-w-7xl mx-auto px-4 text-center text-slate-900 relative z-10">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
             Let’s Build Something Impactful
           </h2>
-          <p className="text-gray-50 max-w-2xl mx-auto mb-8">
-            Whether you’re launching a new product or scaling an existing one,
+          <p className="text-gray-900 max-w-2xl mx-auto mb-8">
+            Whether you’re launching a new product or scaling an existing one, <br />
             Sathya Softech is ready to help you succeed.
           </p>
           <a

@@ -1,30 +1,25 @@
-// import Hero from "../assets/images/hero.jpg";
-import HeroImg from "../assets/images/hero.png";
+import { CheckCircle, ChevronDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+//Hero Section Video
+import HeroVideo from "../assets/videos/hero.mp4";
+
+//Our Clients section images
 import srmedia from "../assets/images/srmedia.png";
 import gk from "../assets/images/gk.png";
 import haraa from "../assets/images/haraa.png";
 import yaritrip from "../assets/images/yaritrip-logo.png";
+import adsinap from "../assets/images/adsinap.png";
+import proprints from "../assets/images/proprint.png";
+import madbzz from "../assets/images/madbzz.png";
+import srworkforce from "../assets/images/srworkforce.png";
 
-import uiuxIcon from "../assets/icons/uiux.png";
-import Webdev from "../assets/icons/webdev.png";
-import Mobileapp from "../assets/icons/mobileapp.png";
-import Custom from "../assets/icons/custom.png";
-import Product from "../assets/icons/product.png";
-import Support from "../assets/icons/support.png";
-import Cyber from "../assets/icons/cyber.png";
-
-import Product1 from "../assets/images/Rectangle26.png";
-import Product2 from "../assets/images/Rectangle27.png";
-import Product3 from "../assets/images/Rectangle28.png";
-import Product4 from "../assets/images/Rectangle29.png";
-
-import CyberImg from "../assets/images/cyber.png";
-import MobileImg from "../assets/images/mobile.png";
-import LaptopImg from "../assets/images/laptop.png";
-import CloudImg from "../assets/images/cloud.png";
-import AiImg from "../assets/images/aiml.png";
-
-import FestiveBg from "../assets/images/Festivebg.png";
+//Why choose us section videos
+import InnovationVideo from "../assets/videos/innovation.mp4";
+import CollaborationVideo from "../assets/videos/collaboration.mp4";
+import ExcellenceVideo from "../assets/videos/excellence.mp4";
+import IntegrityVideo from "../assets/videos/integrity.mp4";
 
 const Home = () => {
   const clients = [
@@ -32,204 +27,168 @@ const Home = () => {
     { name: "GK", logo: gk },
     { name: "Haraa", logo: haraa },
     { name: "Yaritrip", logo: yaritrip },
+    { name: "AdsinAp", logo: adsinap },
+    { name: "Madbzz", logo: madbzz },
+    { name: "Proprints", logo: proprints },
+    { name: "SrworkForce", logo: srworkforce },
+  ];
+
+  const features = [
+    {
+      title: "Innovation",
+      description:
+        "Pushing boundaries in software development to deliver scalable and innovative digital solutions",
+      video: InnovationVideo,
+    },
+    {
+      title: "Collaboration",
+      description:
+        "Working closely with clients to develop tailored solutions that drive measurable success.",
+      video: CollaborationVideo,
+    },
+    {
+      title: "Excellence",
+      description:
+        "Maintaining the highest standards in code quality, system performance, and client outcomes.",
+      video: ExcellenceVideo,
+    },
+    {
+      title: "Integrity",
+      description:
+        "Operating with transparency and ethical considerations at the forefront of all decisions.",
+      video: IntegrityVideo,
+    },
   ];
 
   const services = [
     {
-      title: "UI/UX",
+      title: "UI/UX Designing",
       desc: "We create intuitive, user-centered designs that enhance usability and engagement.",
-      icon: uiuxIcon,
+      path: "/services/ui-ux-design",
     },
     {
       title: "Web Development",
       desc: "We build responsive, high-performance websites tailored to your business needs.",
-      icon: Mobileapp,
-      highlight: true,
+      path: "/services/web-development",
     },
     {
       title: "Mobile Application",
       desc: "We develop powerful Android and iOS applications with modern technologies.",
-      icon: Webdev,
+      path: "/services/mobile-app",
     },
     {
       title: "Product Development",
-      desc: "We transform ideas into market-ready digital products.",
-      icon: Custom,
+      desc: "We transform ideas into market-ready digital products by combining strategic thinking, user-focused design",
+      path: "/services/product-development",
     },
     {
       title: "Custom Software Development",
       desc: "We design and develop custom software solutions to solve unique business challenges",
-      icon: Product,
+      path: "/services/custom-software",
     },
     {
       title: "Support & Maintenance",
       desc: "We provide ongoing support to ensure smooth and uninterrupted operations.",
-      icon: Support,
+      path: "/services/support-maintenence",
     },
     {
       title: "Cyber Security",
       desc: "Security audits and protection strategies to safeguard digital assets.",
-      icon: Cyber,
+      path: "/services/cyber-security",
     },
     {
       title: "AI Automation",
       desc: "AI-driven automation solutions for smarter and efficient workflows.",
-      icon: AiImg,
+      path: "/services/ai-automation",
     },
   ];
 
-  const reviews = [
+  const faqs = [
     {
-      desc: "Professional team with excellent delivery quality. Quality Team delivering Quality Products",
-      image: srmedia,
-      rating: 5,
+      question: "What services do you offer?",
+      answer:
+        "We provide end-to-end IT solutions including web development, mobile app development, UI/UX design, custom software development, AI automation, and cybersecurity services.",
     },
     {
-      name: "Fina Doe",
-      role: "Entrepreneur",
-      desc: "Great experience working with them. Highly recommended. Great Team with Great Work Presence",
-      image: gk,
-      rating: 5,
+      question: "How long does it take to complete a project?",
+      answer:
+        "Project timelines vary depending on complexity. A standard website may take 2–4 weeks, while custom applications can take 6–12 weeks or more.",
     },
     {
-      name: "Sandi Doe",
-      role: "Marketing",
-      desc: "Their team delivered an exceptional solution that transformed our digital presence and business operations.",
-      image: haraa,
-      rating: 4,
+      question: "Do you provide ongoing support and maintenance?",
+      answer:
+        "Yes, we offer dedicated support and maintenance plans to ensure your product runs smoothly and stays up to date.",
     },
     {
-      name: "Sandi Doe",
-      role: "Marketing",
-      desc: "Professional team with excellent delivery quality. Quality Team delivering Quality Products",
-      image: yaritrip,
-      rating: 5,
+      question: "Can you help scale our existing product?",
+      answer:
+        "Absolutely. We specialize in optimizing, scaling, and enhancing existing platforms to handle growth efficiently.",
+    },
+    {
+      question: "How do we get started?",
+      answer:
+        "Simply contact us through our website or book a consultation. We'll understand your requirements and propose the best solution.",
     },
   ];
+
+  const navigate = useNavigate();
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <main className="w-full bg-white text-gray-900">
-      {/* ================= HERO / INTRO ================= */}
-      <section
-        className="w-full mx-auto mb-24 overflow-hidden"
-        style={{
-          // backgroundImage: `url(${FestiveBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        {/* Overlay */}
-        <div className="w-full h-full px-6 py-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center ml-10">
-            {/* LEFT CONTENT */}
-            <div>
-              <h4 className="text-4xl md:text-3xl font-bold leading-tight mb-6 font-serif mt-5">
-                Innovation through Products, Services,{" "}
-                <span className="text-orange-500">AI Powered Solutions</span>
-              </h4>
+      <section className="relative w-full h-[90vh] overflow-hidden">
+        {/* Background Video */}
+        <video
+          src={HeroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-full object-cover"
+        />
 
-              <p className="text-gray-700 mb-6 max-w-lg text-xl">
-                We are a <span className="font-bold">service</span> and{" "}
-                <span className="font-bold">product</span> driven company
-                delivering innovative digital, software, and{" "}
-                <span className="font-bold">AI powered solutions</span> tailored
-                for modern businesses.
-              </p>
+        {/* Dark Overlay (for readability) */}
+        {/* <div className="absolute inset-0 bg-black/50"></div> */}
+      </section>
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-6 text-center font-serif">
+          {/* Heading */}
+          <h4 className="text-3xl md:text-4xl font-bold mb-12">
+            Why Choose Us
+          </h4>
 
-              {/* REQUEST CALL */}
-              <div className="max-w-auto px-10 mr-20 mt-10">
-                <div className="flex items-center bg-white rounded-full shadow-md border border-gray-200 overflow-hidden">
-                  {/* Phone Input */}
-                  <input
-                    id="phoneInput"
-                    type="tel"
-                    placeholder="Enter your phone number"
-                    className="flex-1 px-6 py-4 outline-none text-gray-700 placeholder-gray-400"
+          {/* Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 place-items-center">
+            {features.map((item, index) => (
+              <div
+                key={index}
+                className="w-72 h-72 rounded-full border-4 border-gray-200 flex flex-col items-center justify-center text-center px-6 hover:shadow-lg transition-all duration-300"
+              >
+                {/* Video Icon */}
+                <div className="mb-4 w-20 h-auto flex items-center justify-center">
+                  <video
+                    src={item.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-contain"
                   />
-
-                  {/* Divider */}
-                  <div className="h-8 w-px bg-gray-300"></div>
-
-                  {/* Button */}
-                  <button
-                    onClick={() => {
-                      const phone = document.querySelector("#phoneInput").value;
-                      window.open(
-                        `https://wa.me/91XXXXXXXXXX?text=Call me back at ${phone}`,
-                      );
-                    }}
-                    className="px-6 py-4 font-semibold text-orange-500 hover:text-orange-600"
-                  >
-                    Request Call
-                  </button>
                 </div>
+
+                {/* Title */}
+                <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+
+                {/* Description */}
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-            </div>
-
-            {/* RIGHT IMAGE */}
-            <div className="flex justify-center">
-              <img
-                src={HeroImg}
-                alt="Innovation"
-                className="w-60 max-w-md object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="max-w-7xl mx-auto px-6 text-center font-serif">
-        <h4 className="text-4xl md:text-5xl font-bold leading-tight mb-6 font-serif">
-          Transforming
-          <span className="text-orange-500 font-semibold">
-            {" "}
-            Businesses
-          </span>{" "}
-          Through <br />
-          Digital Innovation
-        </h4>
-      </section>
-
-      {/* ================= FEATURES ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-20 space-y-20">
-        {/* FEATURE 1 */}
-        <div className="grid md:grid-cols-2 gap-12 items-center ml-14">
-          <div>
-            <h3 className="text-2xl font-semibold mb-4">
-              We design and develop powerful websites that elevate your digital
-              presence.
-            </h3>
-
-            <p className="text-gray-600">
-              We specialize in designing and developing modern websites that
-              combine creativity, technology, and performance. Our goal is to
-              create digital experiences that not only look stunning but also
-              deliver seamless functionality and real business growth. Every
-              website we build is tailored to reflect your brand and connect
-              effectively with your audience.
-            </p>
-          </div>
-          <img
-            src={LaptopImg}
-            alt="Mobile Apps"
-            className="w-80 rounded-xl ml-10"
-          />
-        </div>
-
-        {/* FEATURE 2 */}
-        <div className="grid md:grid-cols-2 items-center ml-14">
-          <img src={MobileImg} alt="Web Platform" className="w-80 rounded-xl" />
-          <div>
-            <h3 className="text-2xl font-semibold mb-4">
-              We develop smart mobile applications that bring ideas to life.
-            </h3>
-
-            <p className="text-gray-600">
-              We develop innovative mobile applications that deliver seamless
-              performance and exceptional user experiences. Our apps are
-              designed with modern technology and intuitive interfaces to help
-              businesses connect with users anytime, anywhere.
-            </p>
+            ))}
           </div>
         </div>
       </section>
@@ -241,7 +200,7 @@ const Home = () => {
             Our Services
           </h2>
 
-          <h3 className="text-3xl md:text-2xl font-sans text-center mb-10 font-normal">
+          <h3 className="text-2xl md:text-xl text-center mb-10 font-serif">
             We Deliver All-in-One Solutions for Problems related to IT Field
           </h3>
 
@@ -249,120 +208,48 @@ const Home = () => {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="group p-10 border bg-white 
-          rounded-tl-xl rounded-tr-xl rounded-bl-xl rounded-br-[60px]
-          transition-all duration-300 ease-in-out
-          hover:bg-orange-500 hover:shadow-xl hover:-translate-y-2 cursor-pointer"
+                className="p-10 border bg-white 
+      rounded-tl-xl rounded-tr-xl rounded-bl-xl rounded-br-[60px]
+      transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
               >
-                {/* Icon */}
-                {/* <img
-                  // src={service.icon}
-                  alt={service.title}
-                  className="h-12 mb-4 transition duration-300"
-                /> */}
-
                 {/* Title */}
-                <h3 className="font-semibold mb-2 transition-colors duration-300 group-hover:text-white text-orange-500">
+                <h3 className="font-semibold text-lg mb-2 text-orange-500">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-600 transition-colors duration-300 group-hover:text-white mt-5">
-                  {service.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+                <p className="text-sm text-gray-600 mt-5">{service.desc}</p>
 
-      {/* ================= PRODUCTS ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 font-serif">
-          Products
-        </h2>
+                {/* Know More Button */}
+                <button
+                  onClick={() => navigate(service.path)}
+                  className="mt-6 relative w-44 h-12 flex items-center justify-center 
+        border border-gray-300 rounded-full text-sm font-medium text-gray-700
+        overflow-hidden group transition-all duration-300
+        hover:bg-orange-500 hover:text-white"
+                >
+                  {/* Text */}
+                  <span className="z-10 ml-5">Know More</span>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="grid grid-cols-2 gap-6">
-            <img src={Product1} className="rounded-xl" />
-            <img src={Product2} className="rounded-xl" />
-            <img src={Product3} className="rounded-xl" />
-            <img src={Product4} className="rounded-xl" />
-          </div>
-
-          <div className="ml-10">
-            <h3 className="text-md font-bold mb-4 text-orange-500">PROJECTS</h3>
-
-            <h3 className="text-4xl font-bold mb-4">
-              Our amazing project has <br />
-              been completed
-            </h3>
-
-            <p className="text-gray-600 mb-6">
-              Our completed projects reflect our passion for <br />
-              innovation and quality. Each solution is carefully <br />
-              designed to meet client goals while delivering <br />
-              exceptional user experiences. We take pride in turning <br />
-              ideas into successful digital products.
-            </p>
-
-            <a href="/portfolio">
-              <button className="border border-orange-500 text-orange-500 px-10 py-3 rounded-md hover:bg-orange-500 hover:text-white transition">
-                Recent Projects
-              </button>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= TESTIMONIALS ================= */}
-      <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 font-serif">
-            Successful Clients
-          </h2>
-
-          <div className="grid md:grid-cols-4 gap-10">
-            {reviews.map((review, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition text-center hover:-translate-y-2 cursor-pointer duration-200 ease-in-out"
-              >
-                {/* Quote Icon */}
-                <div className="text-orange-500 text-5xl">❝</div>
-
-                {/* Review Text */}
-                <p className="text-black text-sm leading-relaxed mb-6">
-                  {review.desc}
-                </p>
-
-                {/* Stars */}
-                <div className="flex justify-center gap-1 mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <span
-                      key={i}
-                      className={`text-lg ${
-                        i < review.rating ? "text-orange-400" : "text-gray-300"
-                      }`}
+                  {/* Sliding Arrow */}
+                  <span
+                    className="absolute left-1 top-1 w-10 h-10 flex items-center justify-center 
+          transition-all duration-500 ease-in-out
+          group-hover:translate-x-[125px]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={20}
+                      height={20}
+                      viewBox="0 0 12 12"
                     >
-                      ★
-                    </span>
-                  ))}
-                </div>
-                {/* Client Avatar */}
-                <div className="flex justify-center mb-3">
-                  <img
-                    src={review.image}
-                    alt={review.name}
-                    className="w-32 rounded-full object-cover"
-                  />
-                </div>
-
-                {/* Client Name */}
-                {/* <h4 className="font-semibold text-sm">{review.name}</h4> */}
-
-                {/* Role */}
-                {/* <p className="text-gray-500 text-xs">{review.role}</p> */}
+                      <path
+                        fill="#000"
+                        d="M1.5 6a.75.75 0 0 1 .75-.75h5.94L6.22 3.28a.75.75 0 0 1 1.06-1.06l3.25 3.25a.75.75 0 0 1 0 1.06L7.28 9.78a.75.75 0 0 1-1.06-1.06l1.97-1.97H2.25A.75.75 0 0 1 1.5 6"
+                      ></path>
+                    </svg>
+                  </span>
+                </button>
               </div>
             ))}
           </div>
@@ -370,21 +257,93 @@ const Home = () => {
       </section>
 
       {/* ================= CLIENT LOGOS ================= */}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h3 className="text-4xl font-bold mb-10 text-black font-serif">
-            Our Clients
-          </h3>
+      <section className="py-20 bg-gradient-to-b ">
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Glass Card */}
+          <div className="relative rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md py-16 px-8">
+            {/* Heading */}
+            <h3 className="text-center text-2xl md:text-3xl font-semibold text-black mb-12 font-serif">
+              Our Clients
+            </h3>
 
-          <div className="flex justify-center items-center gap-16 flex-wrap opacity-80 bg-orange-100">
-            {clients.map((client) => (
-              <img
-                key={client.name}
-                src={client.logo}
-                alt={client.name}
-                className="w-52 object-contain"
-              />
+            {/* Logo Scroll */}
+            <div className="relative overflow-hidden">
+              {/* Gradient Fade */}
+              <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r to-transparent z-10" />
+              <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l  to-transparent z-10" />
+
+              {/* Scroll Track */}
+              <div className="flex items-center gap-10 md:gap-14 animate-scroll whitespace-nowrap w-max">
+                {[...clients, ...clients].map((client, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center justify-center min-w-[140px] md:min-w-[160px]"
+                  >
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className="h-12 md:h-16 w-auto object-contain opacity-80 hover:opacity-100 transition duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-24">
+        <div className="max-w-4xl mx-auto px-6">
+          {/* Heading */}
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-serif">
+            Frequently Asked Questions
+          </h2>
+
+          {/* FAQ List */}
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="border rounded-xl bg-white transition-all duration-300"
+              >
+                {/* Question */}
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full flex justify-between items-center p-5 text-left"
+                >
+                  <span className="font-medium text-gray-800">
+                    {faq.question}
+                  </span>
+
+                  <ChevronDown
+                    className={`w-5 h-5 transition-transform duration-300 ${
+                      openIndex === index ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {/* Answer */}
+                <div
+                  className={`overflow-hidden transition-all duration-300 px-5 ${
+                    openIndex === index ? "max-h-40 pb-5" : "max-h-0"
+                  }`}
+                >
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
             ))}
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-4">
+              Still have questions? We're here to help.
+            </p>
+            <button className="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 transition">
+              Contact Us
+            </button>
           </div>
         </div>
       </section>
