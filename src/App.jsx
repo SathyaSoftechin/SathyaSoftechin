@@ -47,7 +47,7 @@ function App() {
         />
         <Route path="/services/custom-software" element={<CustomSoftware />} />
         <Route
-          path="/services/support-maintenance"
+          path="/services/support-maintenence"
           element={<SupportMaintenance />}
         />
         <Route path="/services/cyber-security" element={<CyberSecurity />} />
