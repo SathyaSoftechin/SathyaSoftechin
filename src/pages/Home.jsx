@@ -341,7 +341,10 @@ const Home = () => {
             <p className="text-gray-600 mb-4">
               Still have questions? We're here to help.
             </p>
-            <button className="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 transition">
+            <button
+              onClick={() => navigate("/contact")}
+              className="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 transition"
+            >
               Contact Us
             </button>
           </div>

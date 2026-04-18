@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -70,12 +71,11 @@ const steps = [
 ];
 
 const WebDevelopment = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-gray-50 min-h-screen px-6 md:px-16 py-16">
-      
       {/* 🔷 HERO SECTION */}
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        
         <div>
           <span className="bg-orange-100 text-orange-500 px-4 py-1 rounded-full text-sm font-semibold">
             WEB SOLUTIONS
@@ -88,8 +88,8 @@ const WebDevelopment = () => {
 
           <p className="text-gray-600 mt-6 leading-relaxed max-w-lg">
             Crafting high-performance digital experiences that merge weightless
-            aesthetics with architectural integrity. We build for speed, SEO, and
-            the future.
+            aesthetics with architectural integrity. We build for speed, SEO,
+            and the future.
           </p>
         </div>
 
@@ -108,12 +108,8 @@ const WebDevelopment = () => {
 
       {/* 🔷 SERVICES */}
       <div className="mt-24">
-        <h2 className="text-md font-semibold text-orange-500">
-          CAPABILITIES
-        </h2>
-        <p className="text-black mt-2 text-3xl font-bold">
-          Our Web Services
-        </p>
+        <h2 className="text-md font-semibold text-orange-500">CAPABILITIES</h2>
+        <p className="text-black mt-2 text-3xl font-bold">Our Web Services</p>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mt-10">
           {webServices.map((item, i) => (
@@ -134,9 +130,7 @@ const WebDevelopment = () => {
                 {item.title}
               </h3>
 
-              <p className="text-gray-500 text-sm mt-2">
-                {item.desc}
-              </p>
+              <p className="text-gray-500 text-sm mt-2">{item.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -185,11 +179,13 @@ const WebDevelopment = () => {
           Partner with us to create scalable and high-performance web solutions.
         </p>
 
-        <button className="mt-6 bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+        <button
+          onClick={() => navigate("/contact")}
+          className="mt-6 bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+        >
           Get Started
         </button>
       </div>
-
     </div>
   );
 };

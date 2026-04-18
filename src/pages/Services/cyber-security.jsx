@@ -1,11 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaNetworkWired,
-  FaShieldAlt,
-  FaLock,
-  FaEye,
-} from "react-icons/fa";
+import { FaNetworkWired, FaShieldAlt, FaLock, FaEye } from "react-icons/fa";
 
 // 🔷 IMAGE / VIDEO
 import heroImg from "../../assets/images/cyber-security.png"; // replace if needed
@@ -59,27 +55,26 @@ const steps = [
 ];
 
 const CyberSecurity = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-gray-50 min-h-screen px-6 md:px-16 py-16">
-
       {/* 🔷 HERO */}
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        
         <div>
           <span className="bg-orange-100 text-orange-500 px-4 py-1 rounded-full text-sm font-semibold">
             CYBER SECURITY DIVISION
           </span>
 
           <h1 className="text-4xl md:text-5xl font-bold mt-6 leading-tight text-gray-900">
-            Securing Your{" "}
-            <span className="text-orange-500">Digital</span><br />
+            Securing Your <span className="text-orange-500">Digital</span>
+            <br />
             Infrastructure
           </h1>
 
           <p className="text-gray-600 mt-6 leading-relaxed max-w-lg">
             Advanced protection for enterprise systems, global networks, and
-            sensitive data. We engineer invisible fortresses around your
-            digital assets.
+            sensitive data. We engineer invisible fortresses around your digital
+            assets.
           </p>
         </div>
 
@@ -120,9 +115,7 @@ const CyberSecurity = () => {
                 {item.title}
               </h3>
 
-              <p className="text-gray-500 text-sm mt-2">
-                {item.desc}
-              </p>
+              <p className="text-gray-500 text-sm mt-2">{item.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -169,14 +162,17 @@ const CyberSecurity = () => {
         </h2>
 
         <p className="mt-4 text-orange-100">
-          Let us protect your infrastructure with enterprise-grade security solutions.
+          Let us protect your infrastructure with enterprise-grade security
+          solutions.
         </p>
 
-        <button className="mt-6 bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+        <button
+          onClick={() => navigate("/contact")}
+          className="mt-6 bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+        >
           Get Protected
         </button>
       </div>
-
     </div>
   );
 };

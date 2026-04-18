@@ -1,11 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaServer,
-  FaBug,
-  FaTachometerAlt,
-  FaShieldAlt,
-} from "react-icons/fa";
+import { FaServer, FaBug, FaTachometerAlt, FaShieldAlt } from "react-icons/fa";
 
 // 🔷 VIDEO / IMAGE
 import heroVideo from "../../assets/videos/support.mp4"; // or replace with image if needed
@@ -36,20 +32,34 @@ const supportServices = [
 
 // 🔷 PROCESS
 const steps = [
-  { title: "Issue Identification", desc: "Automated or reported detection of discrepancies." },
-  { title: "Analysis & Diagnosis", desc: "In-depth investigation of root causes by experts." },
-  { title: "Resolution & Fix", desc: "Swift implementation of corrective measures." },
-  { title: "Testing & Validation", desc: "Rigorous QA to ensure the fix is stable." },
-  { title: "Continuous Monitoring", desc: "Post-fix tracking to prevent recurrence." },
+  {
+    title: "Issue Identification",
+    desc: "Automated or reported detection of discrepancies.",
+  },
+  {
+    title: "Analysis & Diagnosis",
+    desc: "In-depth investigation of root causes by experts.",
+  },
+  {
+    title: "Resolution & Fix",
+    desc: "Swift implementation of corrective measures.",
+  },
+  {
+    title: "Testing & Validation",
+    desc: "Rigorous QA to ensure the fix is stable.",
+  },
+  {
+    title: "Continuous Monitoring",
+    desc: "Post-fix tracking to prevent recurrence.",
+  },
 ];
 
 const SupportMaintenance = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-gray-50 min-h-screen px-6 md:px-16 py-16">
-
       {/* 🔷 HERO */}
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        
         {/* Left */}
         <div>
           <span className="bg-orange-100 text-orange-500 px-4 py-1 rounded-full text-sm font-semibold">
@@ -57,17 +67,15 @@ const SupportMaintenance = () => {
           </span>
 
           <h1 className="text-4xl md:text-5xl font-bold mt-6 leading-tight text-gray-900">
-            Reliable{" "}
-            <span className="text-orange-500">Support</span><br />
-            for{" "}
-            <span className="text-orange-500">Seamless</span>{" "}
-            Performance
+            Reliable <span className="text-orange-500">Support</span>
+            <br />
+            for <span className="text-orange-500">Seamless</span> Performance
           </h1>
 
           <p className="text-gray-600 mt-6 leading-relaxed max-w-lg">
             Protect your digital investment with our proactive maintenance
-            strategies. We ensure your systems remain fast, secure, and resilient
-            while you focus on growth.
+            strategies. We ensure your systems remain fast, secure, and
+            resilient while you focus on growth.
           </p>
         </div>
 
@@ -92,9 +100,7 @@ const SupportMaintenance = () => {
 
       {/* 🔷 SERVICES */}
       <div className="mt-24">
-        <h2 className="text-sm font-semibold text-orange-500">
-          OUR EXPERTISE
-        </h2>
+        <h2 className="text-sm font-semibold text-orange-500">OUR EXPERTISE</h2>
 
         <h3 className="text-3xl font-bold text-gray-900 mt-2">
           Support Services
@@ -115,9 +121,7 @@ const SupportMaintenance = () => {
                 {item.title}
               </h3>
 
-              <p className="text-gray-500 text-sm mt-2">
-                {item.desc}
-              </p>
+              <p className="text-gray-500 text-sm mt-2">{item.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -125,9 +129,7 @@ const SupportMaintenance = () => {
 
       {/* 🔷 PROCESS */}
       <div className="mt-28 text-center">
-        <h2 className="text-sm text-orange-500 font-semibold">
-          HOW WE WORK
-        </h2>
+        <h2 className="text-sm text-orange-500 font-semibold">HOW WE WORK</h2>
 
         <h3 className="text-3xl font-bold text-gray-900 mt-2">
           Our Support Process
@@ -171,11 +173,13 @@ const SupportMaintenance = () => {
           Let us handle maintenance while you focus on scaling your business.
         </p>
 
-        <button className="mt-6 bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+        <button
+          onClick={() => navigate("/contact")}
+          className="mt-6 bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+        >
           Get Support
         </button>
       </div>
-
     </div>
   );
 };

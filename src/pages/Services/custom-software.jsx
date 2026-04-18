@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import { motion } from "framer-motion";
 import { FaBuilding, FaCloud, FaServer, FaSyncAlt } from "react-icons/fa";
@@ -30,6 +31,7 @@ const customServices = [
 ];
 
 const CustomSoftware = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-gray-50 min-h-screen px-6 md:px-16 py-16">
       {/* 🔷 HERO SECTION */}
@@ -110,7 +112,10 @@ const CustomSoftware = () => {
           solutions.
         </p>
 
-        <button className="mt-6 bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+        <button
+          onClick={() => navigate("/contact")}
+          className="mt-6 bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+        >
           Get Started
         </button>
       </div>
