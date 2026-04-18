@@ -1,68 +1,85 @@
 import React from "react";
 import { motion } from "framer-motion";
-import heroImg from "../../assets/images/uiux-design.png"; // replace with your image
+import {
+  FaNetworkWired,
+  FaShieldAlt,
+  FaLock,
+  FaEye,
+} from "react-icons/fa";
 
-const uxServices = [
+// 🔷 IMAGE / VIDEO
+import heroImg from "../../assets/images/cyber-security.png"; // replace if needed
+
+// 🔷 SERVICES
+const securityServices = [
   {
-    title: "User Research",
-    desc: "Understanding behavior patterns to build sound structural foundations.",
+    icon: <FaNetworkWired />,
+    title: "Network Security",
+    desc: "Next-gen firewalls and intrusion prevention systems to lock down perimeter and internal traffic.",
   },
   {
-    title: "Wireframing",
-    desc: "Blueprints that prioritize flow and information hierarchy above all else.",
+    icon: <FaShieldAlt />,
+    title: "Application Security",
+    desc: "Securing the software layer through penetration testing and continuous code analysis.",
   },
   {
-    title: "UI Design",
-    desc: "Aesthetic interfaces meeting functional software engineering standards.",
+    icon: <FaLock />,
+    title: "Data Protection",
+    desc: "End-to-end encryption and robust access management to ensure data integrity and privacy.",
   },
   {
-    title: "Prototyping",
-    desc: "Interactive simulations that breathe life into static concepts before launch.",
+    icon: <FaEye />,
+    title: "Threat Response",
+    desc: "24/7 proactive monitoring and rapid incident response protocols to mitigate emerging risks.",
   },
 ];
 
+// 🔷 PROCESS
 const steps = [
   {
-    title: "Research",
-    desc: "Deep dive into user pain points and market gaps.",
+    title: "Risk Assessment",
+    desc: "Deep audit of existing infrastructure.",
   },
   {
-    title: "Ideation",
-    desc: "Brainstorming structural flows and creative pivots.",
+    title: "Vulnerability Analysis",
+    desc: "Identifying weak points and exploits.",
   },
   {
-    title: "Design",
-    desc: "Iterative crafting of high-fidelity visual assets.",
+    title: "Security Implementation",
+    desc: "Deploying hardened protocols.",
   },
   {
-    title: "Testing",
-    desc: "Usability audits to ensure peak performance.",
+    title: "Monitoring & Detection",
+    desc: "Active surveillance and triggers.",
+  },
+  {
+    title: "Continuous Improvement",
+    desc: "Iterative updates and hardening.",
   },
 ];
 
-const UiUxDesign = () => {
+const CyberSecurity = () => {
   return (
     <div className="bg-gray-50 min-h-screen px-6 md:px-16 py-16">
-      
-      {/* 🔷 HERO SECTION */}
+
+      {/* 🔷 HERO */}
       <div className="grid md:grid-cols-2 gap-12 items-center">
         
-        {/* Left */}
         <div>
           <span className="bg-orange-100 text-orange-500 px-4 py-1 rounded-full text-sm font-semibold">
-            UX ARCHITECTURE
+            CYBER SECURITY DIVISION
           </span>
 
           <h1 className="text-4xl md:text-5xl font-bold mt-6 leading-tight text-gray-900">
-            <span className="text-orange-500">Designing</span><br />
-            Experiences<br />
-            That Users Love
+            Securing Your{" "}
+            <span className="text-orange-500">Digital</span><br />
+            Infrastructure
           </h1>
 
           <p className="text-gray-600 mt-6 leading-relaxed max-w-lg">
-            We don’t just build interfaces, we craft digital galleries.
-            Elevate your product with weightless, sophisticated design
-            architecture that guides every interaction with surgical precision.
+            Advanced protection for enterprise systems, global networks, and
+            sensitive data. We engineer invisible fortresses around your
+            digital assets.
           </p>
         </div>
 
@@ -74,35 +91,35 @@ const UiUxDesign = () => {
         >
           <img
             src={heroImg}
-            alt="UI UX Design"
+            alt="Cyber Security"
             className="rounded-2xl shadow-lg"
           />
         </motion.div>
       </div>
 
-      {/* 🔷 SERVICES SECTION */}
+      {/* 🔷 SERVICES */}
       <div className="mt-24">
         <h2 className="text-2xl font-semibold text-gray-900">
-          Architectural Services
+          Core Defense Capabilities
         </h2>
-        <p className="text-gray-500 mt-2">
-          Precision-engineered design cycles for modern SaaS.
-        </p>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mt-10">
-          {uxServices.map((item, i) => (
+        <div className="w-16 h-1 bg-orange-500 mt-2 mb-10"></div>
+
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+          {securityServices.map((item, i) => (
             <motion.div
               key={i}
               whileHover={{ y: -8 }}
               className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300"
             >
-              <div className="w-10 h-10 flex items-center justify-center bg-orange-500 text-white rounded-lg mb-4">
-                {i + 1}
+              <div className="w-12 h-12 flex items-center justify-center bg-orange-100 text-orange-500 rounded-lg mb-4 text-xl">
+                {item.icon}
               </div>
 
               <h3 className="font-semibold text-lg text-gray-900">
                 {item.title}
               </h3>
+
               <p className="text-gray-500 text-sm mt-2">
                 {item.desc}
               </p>
@@ -111,22 +128,24 @@ const UiUxDesign = () => {
         </div>
       </div>
 
-      {/* 🔷 TIMELINE SECTION */}
+      {/* 🔷 PROCESS */}
       <div className="mt-28 text-center">
         <h2 className="text-2xl font-semibold text-gray-900">
-          The Architectural Path
+          The Aura Security Lifecycle
         </h2>
 
         <div className="relative mt-16">
-          
           {/* Line */}
-          <div className="absolute top-6 left-0 w-full h-[2px] bg-gray-200"></div>
+          <div className="absolute top-6 left-20 w-[85%] h-[2px] bg-gray-300"></div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-10 relative z-10">
             {steps.map((step, i) => (
-              <div key={i} className="text-center">
-                
-                <div className="mx-auto w-14 h-14 rounded-full bg-white shadow-md flex items-center justify-center text-orange-500 font-semibold">
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.05 }}
+                className="text-center"
+              >
+                <div className="mx-auto w-14 h-14 rounded-full bg-orange-500 text-white shadow-md flex items-center justify-center font-semibold">
                   {`0${i + 1}`}
                 </div>
 
@@ -137,23 +156,24 @@ const UiUxDesign = () => {
                 <p className="text-gray-500 text-sm mt-2 max-w-xs mx-auto">
                   {step.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* 🔷 CTA SECTION (IMPORTANT FOR CONVERSION) */}
+      {/* 🔷 CTA */}
       <div className="mt-28 bg-orange-500 text-white rounded-3xl p-10 text-center">
         <h2 className="text-3xl font-bold">
-          Let’s Build Exceptional User Experiences
+          Secure Your Digital Ecosystem Today
         </h2>
+
         <p className="mt-4 text-orange-100">
-          Partner with us to design intuitive and scalable digital products.
+          Let us protect your infrastructure with enterprise-grade security solutions.
         </p>
 
         <button className="mt-6 bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
-          Get Started
+          Get Protected
         </button>
       </div>
 
@@ -161,4 +181,4 @@ const UiUxDesign = () => {
   );
 };
 
-export default UiUxDesign;
+export default CyberSecurity;

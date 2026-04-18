@@ -1,68 +1,95 @@
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import { motion } from "framer-motion";
-import heroImg from "../../assets/images/uiux-design.png"; // replace with your image
+import {
+  FaProjectDiagram,
+  FaRobot,
+  FaChartLine,
+  FaDatabase,
+  FaSearch,
+  FaDraftingCompass,
+  FaCogs,
+  FaRocket,
+} from "react-icons/fa";
 
-const uxServices = [
+// 🔷 IMAGE
+import heroVideo from "../../assets/videos/ai-automation.mp4"; // replace if needed
+
+
+// 🔷 SERVICES
+const aiServices = [
   {
-    title: "User Research",
-    desc: "Understanding behavior patterns to build sound structural foundations.",
+    icon: <FaProjectDiagram />,
+    title: "Workflow Automation",
+    desc: "Seamlessly link your creative stack. Automate repetitive file handoffs and project syncs.",
   },
   {
-    title: "Wireframing",
-    desc: "Blueprints that prioritize flow and information hierarchy above all else.",
+    icon: <FaRobot />,
+    title: "AI Chatbots & Assistants",
+    desc: "24/7 intelligent client intake and support using custom-trained LLM models.",
   },
   {
-    title: "UI Design",
-    desc: "Aesthetic interfaces meeting functional software engineering standards.",
+    icon: <FaChartLine />,
+    title: "Process Optimization",
+    desc: "AI-driven auditing of internal design processes to identify and remove bottlenecks.",
   },
   {
-    title: "Prototyping",
-    desc: "Interactive simulations that breathe life into static concepts before launch.",
+    icon: <FaDatabase />,
+    title: "Data Integration",
+    desc: "Synchronize your customer data across all platforms with smart AI mapping.",
   },
 ];
 
+// 🔷 PROCESS / ARCHITECTURE
 const steps = [
   {
-    title: "Research",
-    desc: "Deep dive into user pain points and market gaps.",
+    icon: <FaSearch />,
+    title: "Analysis & Strategy",
+    desc: "Identifying high-impact areas for automation.",
+    number: "01",
   },
   {
-    title: "Ideation",
-    desc: "Brainstorming structural flows and creative pivots.",
+    icon: <FaDraftingCompass />,
+    title: "Workflow Design",
+    desc: "Mapping logic and neural connection points.",
+    number: "02",
   },
   {
-    title: "Design",
-    desc: "Iterative crafting of high-fidelity visual assets.",
+    icon: <FaCogs />,
+    title: "AI Model Integration",
+    desc: "Deploying the intelligence engine.",
+    number: "03",
   },
   {
-    title: "Testing",
-    desc: "Usability audits to ensure peak performance.",
+    icon: <FaRocket />,
+    title: "Implementation",
+    desc: "Full-scale launch within your ecosystem.",
+    number: "04",
   },
 ];
 
-const UiUxDesign = () => {
+
+
+const AiAutomation = () => {
+  const navigate = useNavigate(); 
   return (
     <div className="bg-gray-50 min-h-screen px-6 md:px-16 py-16">
-      
-      {/* 🔷 HERO SECTION */}
+      {/* 🔷 HERO */}
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        
-        {/* Left */}
         <div>
           <span className="bg-orange-100 text-orange-500 px-4 py-1 rounded-full text-sm font-semibold">
-            UX ARCHITECTURE
+            AUTOMATION EXCELLENCE
           </span>
 
-          <h1 className="text-4xl md:text-5xl font-bold mt-6 leading-tight text-gray-900">
-            <span className="text-orange-500">Designing</span><br />
-            Experiences<br />
-            That Users Love
+          <h1 className="text-5xl md:text-6xl font-bold mt-6 leading-tight text-gray-900">
+            Automate <br />
+            <span className="text-orange-500">Smarter</span> with AI
           </h1>
 
           <p className="text-gray-600 mt-6 leading-relaxed max-w-lg">
-            We don’t just build interfaces, we craft digital galleries.
-            Elevate your product with weightless, sophisticated design
-            architecture that guides every interaction with surgical precision.
+            Unlock hyper-efficiency for your business. We build custom AI
+            architectures that handle the mundane, so your team can focus on
+            high-value creative work.
           </p>
         </div>
 
@@ -72,93 +99,111 @@ const UiUxDesign = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <img
-            src={heroImg}
-            alt="UI UX Design"
-            className="rounded-2xl shadow-lg"
+          <video
+            src={heroVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="rounded-2xl shadow-lg w-full h-auto object-cover"
           />
         </motion.div>
       </div>
 
-      {/* 🔷 SERVICES SECTION */}
+      {/* 🔷 SERVICES */}
       <div className="mt-24">
         <h2 className="text-2xl font-semibold text-gray-900">
-          Architectural Services
+          Our AI Automation Services
         </h2>
-        <p className="text-gray-500 mt-2">
-          Precision-engineered design cycles for modern SaaS.
-        </p>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mt-10">
-          {uxServices.map((item, i) => (
+        <div className="w-16 h-1 bg-orange-500 mt-2 mb-10"></div>
+
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+          {aiServices.map((item, i) => (
             <motion.div
               key={i}
               whileHover={{ y: -8 }}
               className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300"
             >
-              <div className="w-10 h-10 flex items-center justify-center bg-orange-500 text-white rounded-lg mb-4">
-                {i + 1}
+              <div className="w-12 h-12 flex items-center justify-center bg-orange-100 text-orange-500 rounded-lg mb-4 text-xl">
+                {item.icon}
               </div>
 
               <h3 className="font-semibold text-lg text-gray-900">
                 {item.title}
               </h3>
-              <p className="text-gray-500 text-sm mt-2">
-                {item.desc}
-              </p>
+
+              <p className="text-gray-500 text-sm mt-2">{item.desc}</p>
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* 🔷 TIMELINE SECTION */}
-      <div className="mt-28 text-center">
-        <h2 className="text-2xl font-semibold text-gray-900">
-          The Architectural Path
-        </h2>
+      {/* 🔷 ARCHITECTURE SECTION */}
+      <div className="mt-28 grid md:grid-cols-2 gap-12 items-start">
+        {/* Left */}
+        <div>
+          <h2 className="text-4xl font-bold text-gray-900">
+            The Architecture of <br />
+            Intelligence
+          </h2>
 
-        <div className="relative mt-16">
-          
-          {/* Line */}
-          <div className="absolute top-6 left-0 w-full h-[2px] bg-gray-200"></div>
+          <p className="text-gray-600 mt-4 leading-relaxed">
+            Our structured approach ensures that AI <br />
+            integration is seamless, secure, and highly <br />
+            effective for your specific needs.
+          </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 relative z-10">
-            {steps.map((step, i) => (
-              <div key={i} className="text-center">
-                
-                <div className="mx-auto w-14 h-14 rounded-full bg-white shadow-md flex items-center justify-center text-orange-500 font-semibold">
-                  {`0${i + 1}`}
-                </div>
-
-                <h3 className="mt-6 font-semibold text-gray-900">
-                  {step.title}
-                </h3>
-
-                <p className="text-gray-500 text-sm mt-2 max-w-xs mx-auto">
-                  {step.desc}
-                </p>
-              </div>
-            ))}
+          {/* Highlight box */}
+          <div className="mt-8 bg-gray-200 p-6 rounded-2xl">
+            <p className="text-orange-500 text-2xl font-bold">95%</p>
+            <p className="text-gray-600 text-sm mt-1 font-semibold">
+              ACCURACY RATE IN MODEL TRAINING
+            </p>
           </div>
+        </div>
+
+        {/* Right */}
+        <div className="grid sm:grid-cols-2 gap-6">
+          {steps.map((step, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ y: -6 }}
+              className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
+            >
+              <div className="flex justify-between items-center mb-4">
+                <div className="text-orange-500 text-xl">{step.icon}</div>
+                <span className="text-gray-200 text-3xl font-bold">
+                  {step.number}
+                </span>
+              </div>
+
+              <h3 className="font-semibold text-gray-900">{step.title}</h3>
+
+              <p className="text-gray-500 text-sm mt-2">{step.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
 
-      {/* 🔷 CTA SECTION (IMPORTANT FOR CONVERSION) */}
+      {/* 🔷 CTA */}
       <div className="mt-28 bg-orange-500 text-white rounded-3xl p-10 text-center">
-        <h2 className="text-3xl font-bold">
-          Let’s Build Exceptional User Experiences
-        </h2>
+        <h2 className="text-3xl font-bold">Ready to Automate Your Business?</h2>
+
         <p className="mt-4 text-orange-100">
-          Partner with us to design intuitive and scalable digital products.
+          Let’s build intelligent systems that scale your operations
+          effortlessly.
         </p>
 
-        <button className="mt-6 bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+        <button
+          onClick={() => navigate("/contact")}
+          className="mt-6 bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+        >
           Get Started
         </button>
       </div>
-
     </div>
   );
 };
 
-export default UiUxDesign;
+export default AiAutomation;
